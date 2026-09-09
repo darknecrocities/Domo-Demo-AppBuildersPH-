@@ -105,11 +105,23 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
               </ul>
             )}
 
-            {/* Shipped Products Logos */}
+            {/* We Offer You an Ecosystem */}
             {slide.products && (
-              <div className="anim anim-6" style={{ marginBottom: '22px' }}>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.14em', color: 'var(--text-muted)', marginBottom: '10px' }}>
-                  Shipped Products & Platforms
+              <div className="anim anim-6" style={{ marginTop: '14px' }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '12px', flexWrap: 'wrap' }}>
+                  <span style={{ 
+                    fontFamily: 'var(--font-mono)', 
+                    fontSize: '11px', 
+                    textTransform: 'uppercase', 
+                    letterSpacing: '0.18em', 
+                    color: 'var(--text-primary)',
+                    fontWeight: 600
+                  }}>
+                    We Offer You an Ecosystem
+                  </span>
+                  <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
+                    — An interconnected platform for modern builders
+                  </span>
                 </div>
                 <div className="product-strip">
                   {slide.products.map((p, i) => (
@@ -120,26 +132,19 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
                       onClick={() => onOpenLightbox(p.logo, `${p.name}: ${p.desc || ''}`)}
                     >
                       <img src={p.logo} alt={p.name} />
-                      <span className="product-name">{p.name}</span>
+                      <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <span className="product-name">{p.name}</span>
+                        {p.desc && (
+                          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '9.5px', color: 'var(--text-muted)', marginTop: '1px' }}>
+                            {p.desc}
+                          </span>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
             )}
-
-            {/* Affiliation Partner Logos */}
-            <div className="anim anim-7" style={{ marginTop: '4px' }}>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.14em', color: 'var(--text-muted)', marginBottom: '12px' }}>
-                Recognitions & Ecosystem
-              </div>
-              <div className="logo-strip">
-                <img src="/assets/logos/google.png" alt="Google" title="Google" />
-                <img src="/assets/logos/nvidia.png" alt="NVIDIA" title="NVIDIA" />
-                <img src="/assets/logos/ollama.png" alt="Ollama" title="Ollama" />
-                <img src="/assets/logos/bettergov.png" alt="BetterGov" title="BetterGov" />
-                <img src="/assets/logos/flyrank.png" alt="FlyRank" title="FlyRank" />
-              </div>
-            </div>
           </div>
 
           {slide.image && (

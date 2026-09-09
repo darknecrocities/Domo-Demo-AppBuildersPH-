@@ -81,7 +81,7 @@ export const slides: SlideData[] = [
       { label: 'Leadership', text: 'Former GDGoC – Holy Angel University Chapter Lead' },
       { label: 'Competition', text: 'Hackathon Champion (Caffeine.ai Championship Winner)' },
       { label: 'Philosophy', text: '"Technology is more than code—it is about creating opportunities and helping communities grow together."' },
-      { label: 'Shipped Products', text: 'DomoDomo, Buddy, DomoSkills, AgentDeck, HireMe, and more' }
+      { label: 'Our Ecosystem', text: 'We offer you an interconnected ecosystem: DomoDomo, Buddy, DomoSkills, AgentDeck, and HireMe.' }
     ],
     products: [
       { name: 'DomoDomo', logo: '/assets/logos/product/domodomo_logo.jpg', desc: '100% Client-Side AI & Toolbox' },

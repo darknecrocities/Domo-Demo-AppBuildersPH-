@@ -74,10 +74,10 @@ export const slides: SlideData[] = [
     tag: '02 / 15',
     eyebrow: 'Speaker Introduction',
     headline: 'Arron Parejas',
-    subheadline: 'Machine Learning Engineer, Community Builder, and Founder of DomoDomo.',
+    subheadline: 'Machine Learning Engineer Intern, Community Builder, and Founder of DomoDomo.',
     layout: 'creator',
     bullets: [
-      { label: 'Role', text: 'Machine Learning Engineer & Open-Source Maintainer' },
+      { label: 'Role', text: 'Machine Learning Engineer Intern & Open-Source Maintainer' },
       { label: 'Leadership', text: 'Former GDGoC – Holy Angel University Chapter Lead' },
       { label: 'Competition', text: 'Hackathon Champion (Caffeine.ai Championship Winner)' },
       { label: 'Philosophy', text: '"Technology is more than code—it is about creating opportunities and helping communities grow together."' },
@@ -86,7 +86,7 @@ export const slides: SlideData[] = [
     image: {
       src: '/assets/photos/profile.png',
       alt: 'Arron Parejas',
-      caption: 'Arron Parejas — Founder & Machine Learning Engineer'
+      caption: 'Arron Parejas — Founder & Machine Learning Engineer Intern'
     },
     notes: [
       'Share personal background as a student engineer and community organizer.',

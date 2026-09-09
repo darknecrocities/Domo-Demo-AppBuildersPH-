@@ -3,7 +3,7 @@
 
 An open-source, minimalist monochrome presentation web framework built with **React 19**, **Vite**, and **TypeScript**, documenting the origin, engineering journey, community impact, and agentic future of [DomoDomo](https://domodomo.site/).
 
-Created by **Arron Parejas** (Founder of DomoDomo, Machine Learning Engineer, and Former GDGoC – Holy Angel University Chapter Lead).
+Created by **Arron Parejas** (Founder of DomoDomo, Machine Learning Engineer Intern, and Former GDGoC – Holy Angel University Chapter Lead).
 
 ---
 

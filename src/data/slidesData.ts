@@ -112,7 +112,7 @@ export const slides: SlideData[] = [
     ],
     stats: [
       { value: '15+', label: 'Tabs open per task' },
-      { value: '$0', label: 'Student budget' },
+      { value: '$2', label: 'Student budget' },
       { value: '100%', label: 'Desire for simplicity' }
     ],
     notes: [

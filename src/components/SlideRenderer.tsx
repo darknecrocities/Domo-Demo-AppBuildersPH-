@@ -53,7 +53,14 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
               <img 
                 src={slide.image.src} 
                 alt={slide.image.alt}
-                style={{ height: '140px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.5))' }}
+                style={{ 
+                  height: '140px', 
+                  width: 'auto', 
+                  objectFit: 'contain', 
+                  borderRadius: '24px', 
+                  border: '1px solid var(--border-subtle)',
+                  boxShadow: '0 20px 40px -10px rgba(0,0,0,0.6)' 
+                }}
               />
             </div>
           )}

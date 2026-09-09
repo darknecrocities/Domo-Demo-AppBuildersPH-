@@ -51,8 +51,8 @@ export const slides: SlideData[] = [
       { label: 'Agentic Future', text: 'Local Ollama runtimes, MCP servers, and DomoSkills ecosystem' },
     ],
     image: {
-      src: '/assets/photos/domo_mascot.png',
-      alt: 'DomoDomo Mascot with Signature Cap',
+      src: '/assets/logos/domodomo_logo (1).jpg',
+      alt: 'DomoDomo Official Logo',
       caption: 'DomoDomo: The Open-Source Local-First Toolbox',
       badge: 'Local-First Sandbox'
     },

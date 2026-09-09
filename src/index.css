@@ -413,15 +413,44 @@ ul.minimal-list li strong {
   border: 1px solid var(--border-subtle);
 }
 
-/* Profile Photo Frame */
+/* Profile Photo Frame & Tilted Animation */
 .profile-frame {
-  width: 240px;
-  height: 300px;
-  border-radius: 8px;
+  width: clamp(140px, 17vw, 220px);
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--border-subtle);
   flex-shrink: 0;
   background: var(--bg-card);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.6);
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+.profile-frame-tilted {
+  transform: rotate(3deg);
+  animation: profileTiltIn 0.85s var(--ease-out-expo) both;
+  animation-delay: 0.25s;
+}
+
+@keyframes profileTiltIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-7deg) translateY(36px) scale(0.92);
+  }
+  65% {
+    transform: rotate(4deg) translateY(-2px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(3deg) translateY(0) scale(1);
+  }
+}
+
+.profile-frame-tilted:hover,
+.profile-frame:hover {
+  transform: rotate(0deg) scale(1.05);
+  border-color: var(--border-bold);
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.85);
 }
 
 .profile-frame img {
@@ -764,28 +793,89 @@ ul.minimal-list li strong {
 }
 
 /* ---------------------------------------------------------
-   Responsive & Print Rules
+   Responsive & Print Rules (Any screen: Desktop, Laptop, Mobile)
    --------------------------------------------------------- */
 @media (max-width: 1024px) {
   .slide-wrapper {
-    padding: 40px 32px;
+    padding: 24px 32px;
   }
   .grid-two-col,
   .grid-equal-col {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
   .grid-three-col {
     grid-template-columns: 1fr;
     gap: 16px;
   }
   .profile-frame {
-    width: 180px;
-    height: 220px;
+    width: clamp(120px, 20vw, 180px);
   }
   .notes-panel {
     width: calc(100vw - 40px);
     right: 20px;
+  }
+}
+
+@media (max-height: 640px) {
+  .nav-bar {
+    height: 48px;
+    padding: 0 20px;
+  }
+  .presentation-viewport {
+    height: calc(100vh - 48px);
+  }
+  .slide-wrapper {
+    padding: 16px 36px 20px;
+    justify-content: center;
+  }
+  .headline-hero {
+    font-size: clamp(26px, 4vw, 40px);
+    margin-bottom: 8px;
+  }
+  .headline-slide {
+    font-size: clamp(20px, 3vw, 32px);
+    margin-bottom: 8px;
+  }
+  .subheadline {
+    font-size: clamp(12.5px, 1.3vw, 15px);
+    margin-bottom: 10px;
+  }
+  .eyebrow {
+    margin-bottom: 8px;
+    font-size: 10px;
+  }
+  .anim-rule {
+    margin-bottom: 10px;
+  }
+  ul.minimal-list {
+    gap: 8px;
+  }
+  ul.minimal-list li {
+    font-size: 13px;
+    gap: 8px;
+  }
+  .profile-frame {
+    width: clamp(100px, 14vw, 150px);
+  }
+}
+
+@media (max-height: 530px) {
+  .slide-wrapper {
+    padding: 10px 24px 14px;
+  }
+  .headline-slide {
+    font-size: clamp(18px, 2.6vw, 26px);
+    margin-bottom: 4px;
+  }
+  ul.minimal-list {
+    gap: 6px;
+  }
+  ul.minimal-list li {
+    font-size: 12px;
+  }
+  .profile-frame {
+    width: clamp(90px, 12vw, 130px);
   }
 }
 

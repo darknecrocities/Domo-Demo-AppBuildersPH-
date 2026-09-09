@@ -96,7 +96,7 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
             )}
 
             {slide.bullets && (
-              <ul className="anim anim-5 minimal-list" style={{ marginBottom: '22px' }}>
+              <ul className="anim anim-5 minimal-list" style={{ marginTop: '8px' }}>
                 {slide.bullets.map((b, i) => (
                   <li key={i}>
                     {b.label && <strong>{b.label}:</strong>} {b.text}
@@ -104,53 +104,12 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
                 ))}
               </ul>
             )}
-
-            {/* We Offer You an Ecosystem */}
-            {slide.products && (
-              <div className="anim anim-6" style={{ marginTop: '14px' }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '12px', flexWrap: 'wrap' }}>
-                  <span style={{ 
-                    fontFamily: 'var(--font-mono)', 
-                    fontSize: '11px', 
-                    textTransform: 'uppercase', 
-                    letterSpacing: '0.18em', 
-                    color: 'var(--text-primary)',
-                    fontWeight: 600
-                  }}>
-                    We Offer You an Ecosystem
-                  </span>
-                  <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-                    — An interconnected platform for modern builders
-                  </span>
-                </div>
-                <div className="product-strip">
-                  {slide.products.map((p, i) => (
-                    <div 
-                      key={i} 
-                      className="product-pill"
-                      title={p.desc ? `${p.name} — ${p.desc}` : p.name}
-                      onClick={() => onOpenLightbox(p.logo, `${p.name}: ${p.desc || ''}`)}
-                    >
-                      <img src={p.logo} alt={p.name} />
-                      <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <span className="product-name">{p.name}</span>
-                        {p.desc && (
-                          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '9.5px', color: 'var(--text-muted)', marginTop: '1px' }}>
-                            {p.desc}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
 
           {slide.image && (
             <div className="anim anim-4" style={{ display: 'flex', justifyContent: 'center' }}>
               <div 
-                className="profile-frame" 
+                className="profile-frame profile-frame-tilted" 
                 onClick={() => onOpenLightbox(slide.image!.src, slide.image!.caption)}
                 style={{ cursor: 'pointer' }}
               >

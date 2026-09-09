@@ -52,7 +52,7 @@ export const slides: SlideData[] = [
     layout: 'hero',
     bullets: [
       { label: 'Philosophy', text: '100% Client-Side, Zero-Leak Privacy & Local-First Execution' },
-      { label: 'Impact', text: 'Empowering students, developers, and builders with zero barriers' },
+      { label: 'Our Ecosystem', text: 'We offer you an ecosystem of local-first tools and agent superpowers' },
       { label: 'Agentic Future', text: 'Local Ollama runtimes, MCP servers, and DomoSkills ecosystem' },
     ],
     image: {
@@ -81,14 +81,7 @@ export const slides: SlideData[] = [
       { label: 'Leadership', text: 'Former GDGoC – Holy Angel University Chapter Lead' },
       { label: 'Competition', text: 'Hackathon Champion (Caffeine.ai Championship Winner)' },
       { label: 'Philosophy', text: '"Technology is more than code—it is about creating opportunities and helping communities grow together."' },
-      { label: 'Our Ecosystem', text: 'We offer you an interconnected ecosystem: DomoDomo, Buddy, DomoSkills, AgentDeck, and HireMe.' }
-    ],
-    products: [
-      { name: 'DomoDomo', logo: '/assets/logos/product/domodomo_logo.jpg', desc: '100% Client-Side AI & Toolbox' },
-      { name: 'Buddy', logo: '/assets/logos/product/buddy.webp', desc: 'AI Companion & Assistant' },
-      { name: 'DomoSkills', logo: '/assets/logos/product/domoskills.png', desc: 'Agentic Skills Marketplace' },
-      { name: 'AgentDeck', logo: '/assets/logos/product/agentdeck.webp', desc: 'Autonomous Agent Platform' },
-      { name: 'HireMe', logo: '/assets/logos/product/hireme.webp', desc: 'Developer Career Engine' }
+      { label: 'Shipped Products', text: 'DomoDomo, Buddy, DomoSkills, AgentDeck, HireMe, and more' }
     ],
     image: {
       src: '/assets/photos/profile.png',
@@ -269,9 +262,9 @@ export const slides: SlideData[] = [
   {
     id: 9,
     tag: '09 / 15',
-    eyebrow: 'Product Breakdown',
+    eyebrow: 'Product Breakdown · We Offer You an Ecosystem',
     headline: '240+ Offline Browser Utilities',
-    subheadline: 'Seventeen categorized tool suites engineered for students, engineers, creators, and researchers.',
+    subheadline: 'We offer you an ecosystem: seventeen categorized tool suites engineered for students, engineers, creators, and researchers.',
     layout: 'tools-ecosystem',
     bullets: [
       { label: 'PDF Suite', text: 'Merge, split, compress, watermark, sign, encrypt, and edit PDF documents locally.' },

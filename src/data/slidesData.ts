@@ -48,18 +48,17 @@ export const slides: SlideData[] = [
     tag: '01 / 15',
     eyebrow: '',
     headline: 'DomoDomo',
-    subheadline: 'From Student Struggles to Hackathon Glory, and the Evolution from Simple Web Utilities to 240+ Local-First Agentic AI Tools.',
+    subheadline: 'From Student Struggles to Hackathon Glory',
     layout: 'hero',
     bullets: [
-      { label: 'Philosophy', text: '100% Client-Side, Zero-Leak Privacy & Local-First Execution' },
-      { label: 'Our Ecosystem', text: 'We offer you an ecosystem of local-first tools and agent superpowers' },
-      { label: 'Agentic Future', text: 'Local Ollama runtimes, MCP servers, and DomoSkills ecosystem' },
+      { label: 'Privacy', text: '100% Client-Side Execution & Local Storage' },
+      { label: 'Ecosystem', text: 'Unified Platform Across 240+ Open Tools' },
+      { label: 'Community', text: 'Built for Students, Developers, and Open Web' },
     ],
     image: {
       src: '/assets/logos/domodomo_logo (1).jpg',
       alt: 'DomoDomo Official Logo',
-      caption: 'DomoDomo: The Open-Source Local-First Toolbox',
-      badge: 'Local-First Sandbox'
+      caption: 'DomoDomo: The Open-Source Local-First Platform',
     },
     notes: [
       'Welcome everyone to today’s presentation for AppBuildersPH.',

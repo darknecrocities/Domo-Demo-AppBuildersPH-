@@ -25,51 +25,40 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
           ------------------------------------------------------------- */}
       {slide.layout === 'hero' && (
         <div className="hero-keynote-grid">
-          {/* Left Column: Command & Keynote Thesis */}
+          {/* Left Column: Formal Presentation Heading */}
           <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-            <div className="anim anim-1" style={{ marginBottom: '14px' }}>
-              <div className="hero-kicker">
-                <span className="hero-live-indicator" />
-                <span>OPEN-SOURCE LOCAL-FIRST AI TOOLBOX // 2026</span>
-              </div>
-            </div>
-
-            <h1 className="anim anim-2 hero-main-title">
+            <h1 className="anim anim-1 hero-main-title">
               {slide.headline}
             </h1>
 
-            <div className="anim anim-3 hero-thesis">
+            <div className="anim anim-2 hero-thesis">
               From Student Struggles to Hackathon Glory
             </div>
 
-            <p className="anim anim-4 hero-lead-desc">
-              The journey from late-night student tab overload to an ecosystem of 240+ private, client-side tools and autonomous agent superpowers.
+            <p className="anim anim-3 hero-lead-desc">
+              The evolution from student utility tools into a comprehensive, client-side platform of 240+ open-source tools.
             </p>
 
-            {/* Author Credential Badge */}
-            <div className="anim anim-5 hero-author-strip">
+            {/* Author Credential Card */}
+            <div className="anim anim-4 hero-author-strip">
               <img 
                 src="/assets/photos/profile.png" 
                 alt="Arron Parejas" 
                 className="hero-author-avatar"
               />
               <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <div style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--text-primary)' }}>
+                <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)' }}>
                   Arron Parejas
                 </div>
-                <div style={{ fontSize: '11.5px', color: 'var(--text-secondary)' }}>
+                <div style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
                   Machine Learning Engineer Intern &bull; Founder of DomoDomo
                 </div>
-              </div>
-              <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
-                <Shield size={12} color="#10b981" />
-                <span>CLIENT-SIDE</span>
               </div>
             </div>
 
             {/* Key Pillars Micro-Cards */}
             {slide.bullets && (
-              <div className="anim anim-6 hero-pillars-grid">
+              <div className="anim anim-5 hero-pillars-grid">
                 {slide.bullets.map((b, i) => (
                   <div key={i} className="hero-pillar-card">
                     <div className="hero-pillar-label">{b.label}</div>
@@ -80,19 +69,11 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
             )}
           </div>
 
-          {/* Right Column: Hero Keynote Showcase Window */}
-          <div className="anim anim-4 hero-keynote-window">
+          {/* Right Column: Keynote Presentation Showcase */}
+          <div className="anim anim-3 hero-keynote-window">
             <div className="hero-window-header">
-              <div className="hero-window-dots">
-                <span />
-                <span />
-                <span />
-              </div>
-              <div>domodomo-core.system // v2.4</div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#10b981' }}>
-                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#10b981', display: 'inline-block' }} />
-                <span>ONLINE</span>
-              </div>
+              <span style={{ fontWeight: 600, letterSpacing: '0.04em' }}>DomoDomo Platform</span>
+              <span style={{ color: 'var(--text-muted)' }}>Keynote Presentation</span>
             </div>
 
             <div className="hero-logo-stage">
@@ -102,32 +83,22 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
                   alt={slide.image.alt}
                   className="hero-logo-img"
                   onClick={() => onOpenLightbox(slide.image!.src, slide.image!.caption)}
-                  title="Click to view full resolution logo"
+                  title="Click to view full size"
                 />
               )}
 
-              <div className="hero-terminal-box">
-                <div className="hero-terminal-row">
-                  <span className="hero-terminal-prompt">&gt;</span>
-                  <span><strong>architecture:</strong> 100% Client-Side Sandbox</span>
-                </div>
-                <div className="hero-terminal-row">
-                  <span className="hero-terminal-prompt">&gt;</span>
-                  <span><strong>privacy:</strong> Zero Subscriptions / Zero Cloud Leaks</span>
-                </div>
-                <div className="hero-terminal-row">
-                  <span className="hero-terminal-prompt">&gt;</span>
-                  <span><strong>ecosystem:</strong> &quot;We offer you an ecosystem&quot;</span>
-                </div>
-                <div className="hero-terminal-row" style={{ color: 'var(--text-muted)', marginTop: '4px' }}>
-                  <span className="hero-terminal-prompt">&gt;</span>
-                  <span><em>domodomo · buddy · domoskills · agentdeck · hireme</em></span>
+              <div className="hero-formal-summary">
+                <div className="hero-formal-quote">&ldquo;We offer you an ecosystem.&rdquo;</div>
+                <p className="hero-formal-desc">
+                  A private, local-first platform designed to replace fragmented subscriptions.
+                </p>
+                <div className="hero-formal-suite">
+                  DomoDomo &bull; Buddy &bull; DomoSkills &bull; AgentDeck &bull; HireMe
                 </div>
               </div>
 
-              <div style={{ marginTop: '14px', display: 'flex', gap: '8px', alignItems: 'center', fontSize: '11px', color: 'var(--text-muted)' }}>
-                <Sparkles size={12} />
-                <span>Click logo to zoom &bull; Use &rarr; to advance slides</span>
+              <div style={{ marginTop: '14px', display: 'flex', gap: '6px', alignItems: 'center', fontSize: '11px', color: 'var(--text-muted)' }}>
+                <span>Click image to expand &bull; Use &rarr; to advance</span>
               </div>
             </div>
           </div>

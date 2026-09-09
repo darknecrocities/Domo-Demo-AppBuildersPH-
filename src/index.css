@@ -269,93 +269,62 @@ html, body {
 }
 
 /* ---------------------------------------------------------
-   Hero Keynote Bespoke Layout (Slide 1)
+   Hero Keynote Formal & Minimalist Layout (Slide 1)
    --------------------------------------------------------- */
 .hero-keynote-grid {
   display: grid;
   grid-template-columns: 1.18fr 0.82fr;
-  gap: 48px;
+  gap: 52px;
   align-items: center;
   width: 100%;
   max-width: 1320px;
   margin: 0 auto;
 }
 
-.hero-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-secondary);
-  padding: 6px 14px;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid var(--border-subtle);
-}
-
-.hero-live-indicator {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 10px #10b981;
-  display: inline-block;
-  animation: pulseGlow 2s ease-in-out infinite;
-}
-
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.9; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
-}
-
 .hero-main-title {
   font-family: var(--font-sans);
-  font-size: clamp(44px, 5.8vw, 78px);
+  font-size: clamp(48px, 6.2vw, 84px);
   font-weight: 800;
-  line-height: 0.98;
+  line-height: 0.96;
   letter-spacing: -0.045em;
   color: var(--text-primary);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .hero-thesis {
   font-family: var(--font-serif);
-  font-size: clamp(20px, 2.1vw, 28px);
+  font-size: clamp(20px, 2.2vw, 30px);
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.015em;
   color: var(--text-primary);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .hero-lead-desc {
   font-family: var(--font-body);
-  font-size: clamp(13.5px, 1.2vw, 16px);
+  font-size: clamp(14px, 1.25vw, 17px);
   line-height: 1.6;
   color: var(--text-secondary);
   max-width: 620px;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
 .hero-author-strip {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 10px 16px;
+  padding: 12px 18px;
   border-radius: 12px;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  margin-bottom: 22px;
-  max-width: 600px;
+  margin-bottom: 24px;
+  max-width: 540px;
 }
 
 .hero-author-avatar {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--border-bold);
@@ -374,27 +343,28 @@ html, body {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-subtle);
   border-radius: 10px;
-  padding: 12px 14px;
+  padding: 14px 16px;
   transition: all 0.25s var(--ease-smooth);
 }
 
 .hero-pillar-card:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.045);
   border-color: var(--border-bold);
   transform: translateY(-2px);
 }
 
 .hero-pillar-label {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-family: var(--font-sans);
+  font-size: 11px;
   font-weight: 600;
   color: var(--text-muted);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   margin-bottom: 4px;
 }
 
 .hero-pillar-text {
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 500;
   color: var(--text-primary);
   line-height: 1.4;
@@ -414,7 +384,7 @@ html, body {
 
 .hero-keynote-window:hover {
   border-color: var(--border-bold);
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: 0 32px 75px -15px rgba(0, 0, 0, 0.85);
 }
 
@@ -422,37 +392,25 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 18px;
+  padding: 14px 20px;
   border-bottom: 1px solid var(--border-subtle);
-  background: rgba(0, 0, 0, 0.3);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-muted);
-}
-
-.hero-window-dots {
-  display: flex;
-  gap: 6px;
-}
-
-.hero-window-dots span {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--border-bold);
+  background: rgba(255, 255, 255, 0.015);
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  color: var(--text-secondary);
 }
 
 .hero-logo-stage {
-  padding: 30px 24px 22px;
+  padding: 32px 24px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
 }
 
 .hero-logo-img {
-  height: 135px;
+  height: 140px;
   width: auto;
   object-fit: contain;
   border-radius: 24px;
@@ -463,33 +421,42 @@ html, body {
 }
 
 .hero-logo-img:hover {
-  transform: scale(1.04);
+  transform: scale(1.03);
   box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.85);
 }
 
-.hero-terminal-box {
+.hero-formal-summary {
   width: 100%;
-  margin-top: 18px;
-  padding: 14px 18px;
-  background: #08090a;
+  margin-top: 20px;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.02);
   border-radius: 12px;
   border: 1px solid var(--border-subtle);
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  line-height: 1.65;
+  text-align: center;
+}
+
+.hero-formal-quote {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.hero-formal-desc {
+  font-family: var(--font-body);
+  font-size: 12px;
   color: var(--text-secondary);
-  text-align: left;
+  line-height: 1.5;
+  margin-bottom: 8px;
 }
 
-.hero-terminal-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.hero-terminal-prompt {
-  color: #10b981;
-  font-weight: 700;
+.hero-formal-suite {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
 }
 
 /* ---------------------------------------------------------
@@ -1072,11 +1039,6 @@ ul.minimal-list li strong {
   .hero-keynote-grid {
     gap: 20px;
   }
-  .hero-kicker {
-    padding: 4px 10px;
-    font-size: 9.5px;
-    margin-bottom: 8px;
-  }
   .hero-main-title {
     font-size: clamp(32px, 4.5vw, 48px);
     margin-bottom: 4px;
@@ -1116,11 +1078,20 @@ ul.minimal-list li strong {
   .hero-logo-img {
     height: 85px;
   }
-  .hero-terminal-box {
+  .hero-formal-summary {
     margin-top: 10px;
-    padding: 8px 12px;
+    padding: 10px 14px;
+  }
+  .hero-formal-quote {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  .hero-formal-desc {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+  .hero-formal-suite {
     font-size: 10px;
-    line-height: 1.4;
   }
   .headline-hero {
     font-size: clamp(26px, 4vw, 40px);

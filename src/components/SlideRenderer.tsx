@@ -25,14 +25,17 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
           ------------------------------------------------------------- */}
       {slide.layout === 'hero' && (
         <div style={{ textAlign: 'center', maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <div className="anim anim-1 eyebrow" style={{ marginBottom: '12px' }}>
-            <span className="eyebrow-pill">
-              <Sparkles size={12} />
-              {slide.eyebrow}
-            </span>
-          </div>
-
-          <div className="anim anim-2 anim-rule wide" style={{ margin: '0 auto 18px' }} />
+          {slide.eyebrow ? (
+            <>
+              <div className="anim anim-1 eyebrow" style={{ marginBottom: '12px' }}>
+                <span className="eyebrow-pill">
+                  <Sparkles size={12} />
+                  {slide.eyebrow}
+                </span>
+              </div>
+              <div className="anim anim-2 anim-rule wide" style={{ margin: '0 auto 18px' }} />
+            </>
+          ) : null}
 
           <h1 className="anim anim-3 headline-hero" style={{ letterSpacing: '-0.03em', marginBottom: '12px' }}>
             {slide.headline}

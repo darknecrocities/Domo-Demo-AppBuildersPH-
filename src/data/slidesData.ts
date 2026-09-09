@@ -46,7 +46,7 @@ export const slides: SlideData[] = [
   {
     id: 1,
     tag: '01 / 15',
-    eyebrow: 'AppBuildersPH · Keynote Presentation',
+    eyebrow: '',
     headline: 'DomoDomo',
     subheadline: 'From Student Struggles to Hackathon Glory, and the Evolution from Simple Web Utilities to 240+ Local-First Agentic AI Tools.',
     layout: 'hero',

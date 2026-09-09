@@ -58,9 +58,11 @@ export const SlideDrawer: React.FC<SlideDrawerProps> = ({
               >
                 <div className="item-num">{String(index + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}</div>
                 <div className="item-title">{s.headline}</div>
-                <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: 'auto', paddingTop: '6px' }}>
-                  {s.eyebrow}
-                </div>
+                {s.eyebrow ? (
+                  <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: 'auto', paddingTop: '6px' }}>
+                    {s.eyebrow}
+                  </div>
+                ) : null}
               </div>
             );
           })}

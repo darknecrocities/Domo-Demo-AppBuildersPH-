@@ -269,6 +269,230 @@ html, body {
 }
 
 /* ---------------------------------------------------------
+   Hero Keynote Bespoke Layout (Slide 1)
+   --------------------------------------------------------- */
+.hero-keynote-grid {
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: 48px;
+  align-items: center;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--border-subtle);
+}
+
+.hero-live-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  display: inline-block;
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.9; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.hero-main-title {
+  font-family: var(--font-sans);
+  font-size: clamp(44px, 5.8vw, 78px);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.hero-thesis {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2.1vw, 28px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.hero-lead-desc {
+  font-family: var(--font-body);
+  font-size: clamp(13.5px, 1.2vw, 16px);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin-bottom: 22px;
+}
+
+.hero-author-strip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 22px;
+  max-width: 600px;
+}
+
+.hero-author-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border-bold);
+  flex-shrink: 0;
+}
+
+.hero-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 620px;
+}
+
+.hero-pillar-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 12px 14px;
+  transition: all 0.25s var(--ease-smooth);
+}
+
+.hero-pillar-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-bold);
+  transform: translateY(-2px);
+}
+
+.hero-pillar-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.hero-pillar-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.hero-keynote-window {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-keynote-window:hover {
+  border-color: var(--border-bold);
+  transform: translateY(-4px);
+  box-shadow: 0 32px 75px -15px rgba(0, 0, 0, 0.85);
+}
+
+.hero-window-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(0, 0, 0, 0.3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.hero-window-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.hero-window-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border-bold);
+}
+
+.hero-logo-stage {
+  padding: 30px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+}
+
+.hero-logo-img {
+  height: 135px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 24px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-logo-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.85);
+}
+
+.hero-terminal-box {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px 18px;
+  background: #08090a;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+.hero-terminal-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-terminal-prompt {
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------
    Editorial Grids & Columns
    --------------------------------------------------------- */
 .grid-two-col {
@@ -799,6 +1023,22 @@ ul.minimal-list li strong {
   .slide-wrapper {
     padding: 24px 32px;
   }
+  .hero-keynote-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+  .hero-author-strip {
+    margin: 0 auto 20px;
+  }
+  .hero-pillars-grid {
+    margin: 0 auto;
+  }
+  .hero-keynote-window {
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
   .grid-two-col,
   .grid-equal-col {
     grid-template-columns: 1fr;
@@ -828,6 +1068,59 @@ ul.minimal-list li strong {
   .slide-wrapper {
     padding: 16px 36px 20px;
     justify-content: center;
+  }
+  .hero-keynote-grid {
+    gap: 20px;
+  }
+  .hero-kicker {
+    padding: 4px 10px;
+    font-size: 9.5px;
+    margin-bottom: 8px;
+  }
+  .hero-main-title {
+    font-size: clamp(32px, 4.5vw, 48px);
+    margin-bottom: 4px;
+  }
+  .hero-thesis {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .hero-lead-desc {
+    font-size: 12px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+  .hero-author-strip {
+    padding: 6px 12px;
+    margin-bottom: 12px;
+  }
+  .hero-author-avatar {
+    width: 28px;
+    height: 28px;
+  }
+  .hero-pillars-grid {
+    gap: 8px;
+  }
+  .hero-pillar-card {
+    padding: 8px 10px;
+  }
+  .hero-pillar-label {
+    font-size: 9px;
+  }
+  .hero-pillar-text {
+    font-size: 11px;
+  }
+  .hero-logo-stage {
+    padding: 16px 16px 12px;
+  }
+  .hero-logo-img {
+    height: 85px;
+  }
+  .hero-terminal-box {
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 10px;
+    line-height: 1.4;
   }
   .headline-hero {
     font-size: clamp(26px, 4vw, 40px);
@@ -863,6 +1156,23 @@ ul.minimal-list li strong {
 @media (max-height: 530px) {
   .slide-wrapper {
     padding: 10px 24px 14px;
+  }
+  .hero-keynote-grid {
+    gap: 12px;
+  }
+  .hero-main-title {
+    font-size: 26px;
+    margin-bottom: 2px;
+  }
+  .hero-thesis {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .hero-lead-desc {
+    display: none;
+  }
+  .hero-logo-img {
+    height: 58px;
   }
   .headline-slide {
     font-size: clamp(18px, 2.6vw, 26px);

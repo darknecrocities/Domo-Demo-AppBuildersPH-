@@ -60,8 +60,15 @@ html, body {
   height: 100vh;
   position: relative;
   overflow: hidden;
+}
+
+.presentation-app {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
 /* ---------------------------------------------------------
@@ -71,7 +78,7 @@ html, body {
   flex: 1;
   position: relative;
   width: 100%;
-  height: calc(100vh - 72px);
+  height: calc(100vh - 58px);
   overflow: hidden;
 }
 
@@ -83,8 +90,8 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 60px 80px;
-  max-width: 1400px;
+  padding: 32px 64px 40px;
+  max-width: 1380px;
   margin: 0 auto;
   overflow-y: auto;
   scrollbar-width: none;
@@ -214,22 +221,22 @@ html, body {
 
 .headline-hero {
   font-family: var(--font-serif);
-  font-size: clamp(40px, 6vw, 84px);
+  font-size: clamp(34px, 4.5vw, 64px);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.08;
   letter-spacing: -0.025em;
   color: var(--text-primary);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .headline-slide {
   font-family: var(--font-serif);
-  font-size: clamp(32px, 4.4vw, 56px);
+  font-size: clamp(26px, 3.4vw, 44px);
   font-weight: 700;
-  line-height: 1.12;
+  line-height: 1.14;
   letter-spacing: -0.02em;
   color: var(--text-primary);
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .subheadline {
@@ -458,20 +465,64 @@ ul.minimal-list li strong {
   transform: translateY(-1px);
 }
 
+/* Shipped Product Badges */
+.product-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.product-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px 5px 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.22s var(--ease-smooth);
+}
+
+.product-pill:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-bold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.5);
+}
+
+.product-pill img {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+}
+
+.product-pill .product-name {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
 /* ---------------------------------------------------------
-   Bottom Navigation Chrome
+   Top Appbar Navigation Chrome
    --------------------------------------------------------- */
 .nav-bar {
-  height: 72px;
+  height: 56px;
   width: 100%;
   background: var(--bg-color);
-  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 32px;
   z-index: 50;
   position: relative;
+  flex-shrink: 0;
 }
 
 .nav-controls {
@@ -481,8 +532,8 @@ ul.minimal-list li strong {
 }
 
 .nav-btn {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 6px;
   border: 1px solid var(--border-subtle);
   background: var(--bg-card);
@@ -519,7 +570,7 @@ ul.minimal-list li strong {
 /* Top/Bottom Progress Bar */
 .progress-line-wrap {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 2px;

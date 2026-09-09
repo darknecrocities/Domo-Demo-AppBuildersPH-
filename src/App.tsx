@@ -141,21 +141,12 @@ export const App: React.FC = () => {
   };
 
   return (
-    <main 
-      className="presentation-viewport"
+    <div 
+      className="presentation-app"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      aria-live="polite"
     >
-      {/* Slide Container */}
-      <SlideRenderer
-        key={currentSlide.id}
-        slide={currentSlide}
-        direction={slideDirection}
-        onOpenLightbox={(src, caption) => setLightboxData({ src, caption })}
-      />
-
-      {/* Persistent Navigation Controls */}
+      {/* Top Persistent Appbar */}
       <Navigation
         currentSlide={currentSlideIndex}
         totalSlides={totalSlides}
@@ -171,6 +162,16 @@ export const App: React.FC = () => {
         onToggleTheme={toggleTheme}
         hasNotesOpen={isNotesOpen}
       />
+
+      {/* Slide Viewport */}
+      <main className="presentation-viewport" aria-live="polite">
+        <SlideRenderer
+          key={currentSlide.id}
+          slide={currentSlide}
+          direction={slideDirection}
+          onOpenLightbox={(src, caption) => setLightboxData({ src, caption })}
+        />
+      </main>
 
       {/* Modals & Overlays */}
       <SlideDrawer
@@ -197,6 +198,6 @@ export const App: React.FC = () => {
         caption={lightboxData?.caption}
         onClose={() => setLightboxData(null)}
       />
-    </main>
+    </div>
   );
 };

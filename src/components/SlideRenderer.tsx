@@ -25,21 +25,21 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
           ------------------------------------------------------------- */}
       {slide.layout === 'hero' && (
         <div style={{ textAlign: 'center', maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <div className="anim anim-1 eyebrow">
+          <div className="anim anim-1 eyebrow" style={{ marginBottom: '12px' }}>
             <span className="eyebrow-pill">
               <Sparkles size={12} />
               {slide.eyebrow}
             </span>
           </div>
 
-          <div className="anim anim-2 anim-rule wide" style={{ margin: '0 auto 28px' }} />
+          <div className="anim anim-2 anim-rule wide" style={{ margin: '0 auto 18px' }} />
 
-          <h1 className="anim anim-3 headline-hero" style={{ letterSpacing: '-0.03em' }}>
+          <h1 className="anim anim-3 headline-hero" style={{ letterSpacing: '-0.03em', marginBottom: '12px' }}>
             {slide.headline}
           </h1>
 
           {slide.subheadline && (
-            <p className="anim anim-4 subheadline" style={{ margin: '0 auto 36px', textAlign: 'center' }}>
+            <p className="anim anim-4 subheadline" style={{ margin: '0 auto 22px', textAlign: 'center' }}>
               {slide.subheadline}
             </p>
           )}
@@ -47,17 +47,17 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
           {slide.image && (
             <div 
               className="anim anim-5" 
-              style={{ margin: '16px 0 28px', cursor: 'pointer' }}
+              style={{ margin: '8px 0 20px', cursor: 'pointer' }}
               onClick={() => onOpenLightbox(slide.image!.src, slide.image!.caption)}
             >
               <img 
                 src={slide.image.src} 
                 alt={slide.image.alt}
                 style={{ 
-                  height: '140px', 
+                  height: '112px', 
                   width: 'auto', 
                   objectFit: 'contain', 
-                  borderRadius: '24px', 
+                  borderRadius: '20px', 
                   border: '1px solid var(--border-subtle)',
                   boxShadow: '0 20px 40px -10px rgba(0,0,0,0.6)' 
                 }}
@@ -96,7 +96,7 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
             )}
 
             {slide.bullets && (
-              <ul className="anim anim-5 minimal-list" style={{ marginBottom: '32px' }}>
+              <ul className="anim anim-5 minimal-list" style={{ marginBottom: '22px' }}>
                 {slide.bullets.map((b, i) => (
                   <li key={i}>
                     {b.label && <strong>{b.label}:</strong>} {b.text}
@@ -105,9 +105,31 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
               </ul>
             )}
 
+            {/* Shipped Products Logos */}
+            {slide.products && (
+              <div className="anim anim-6" style={{ marginBottom: '22px' }}>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.14em', color: 'var(--text-muted)', marginBottom: '10px' }}>
+                  Shipped Products & Platforms
+                </div>
+                <div className="product-strip">
+                  {slide.products.map((p, i) => (
+                    <div 
+                      key={i} 
+                      className="product-pill"
+                      title={p.desc ? `${p.name} — ${p.desc}` : p.name}
+                      onClick={() => onOpenLightbox(p.logo, `${p.name}: ${p.desc || ''}`)}
+                    >
+                      <img src={p.logo} alt={p.name} />
+                      <span className="product-name">{p.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Affiliation Partner Logos */}
-            <div className="anim anim-6" style={{ marginTop: '12px' }}>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.14em', color: 'var(--text-muted)', marginBottom: '14px' }}>
+            <div className="anim anim-7" style={{ marginTop: '4px' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.14em', color: 'var(--text-muted)', marginBottom: '12px' }}>
                 Recognitions & Ecosystem
               </div>
               <div className="logo-strip">
@@ -223,21 +245,22 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
                 style={{ 
                   background: 'var(--bg-card)', 
                   border: '1px solid var(--border-subtle)', 
-                  borderRadius: '12px', 
-                  padding: '40px',
+                  borderRadius: '16px', 
+                  padding: '20px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
                   width: '100%',
-                  maxWidth: '380px'
+                  maxWidth: '380px',
+                  boxShadow: '0 20px 40px -10px rgba(0,0,0,0.6)'
                 }}
                 onClick={() => onOpenLightbox(slide.image!.src, slide.image!.caption)}
               >
                 <img 
                   src={slide.image.src} 
                   alt={slide.image.alt}
-                  style={{ width: '100%', maxHeight: '280px', objectFit: 'contain' }}
+                  style={{ width: '100%', maxHeight: '320px', objectFit: 'contain', borderRadius: '12px' }}
                 />
               </div>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-muted)', marginTop: '14px', textAlign: 'center' }}>

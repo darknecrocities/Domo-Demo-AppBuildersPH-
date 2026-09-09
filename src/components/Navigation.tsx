@@ -45,7 +45,7 @@ export const Navigation: React.FC<NavigationProps> = ({
   const formatIndex = (index: number) => String(index).padStart(2, '0');
 
   return (
-    <footer className="nav-bar" aria-label="Slide deck navigation controls">
+    <header className="nav-bar" role="banner" aria-label="Slide deck navigation appbar">
       {/* Progress Bar Line */}
       <div className="progress-line-wrap" role="progressbar" aria-valuenow={progressPercent} aria-valuemin={0} aria-valuemax={100}>
         <div className="progress-line" style={{ width: `${progressPercent}%` }} />
@@ -129,6 +129,6 @@ export const Navigation: React.FC<NavigationProps> = ({
           {isFullscreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
         </button>
       </div>
-    </footer>
+    </header>
   );
 };

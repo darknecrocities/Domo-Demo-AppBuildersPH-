@@ -33,6 +33,11 @@ export interface SlideData {
     alt: string;
     caption?: string;
   };
+  products?: Array<{
+    name: string;
+    logo: string;
+    desc?: string;
+  }>;
   notes: string[];
 }
 
@@ -76,7 +81,14 @@ export const slides: SlideData[] = [
       { label: 'Leadership', text: 'Former GDGoC – Holy Angel University Chapter Lead' },
       { label: 'Competition', text: 'Hackathon Champion (Caffeine.ai Championship Winner)' },
       { label: 'Philosophy', text: '"Technology is more than code—it is about creating opportunities and helping communities grow together."' },
-      { label: 'Shipped Products', text: 'DomoDomo (240+ tools), DomoSkills, and real-world ML toolkits' }
+      { label: 'Shipped Products', text: 'DomoDomo, Buddy, DomoSkills, AgentDeck, HireMe, and more' }
+    ],
+    products: [
+      { name: 'DomoDomo', logo: '/assets/logos/product/domodomo_logo.jpg', desc: '100% Client-Side AI & Toolbox' },
+      { name: 'Buddy', logo: '/assets/logos/product/buddy.webp', desc: 'AI Companion & Assistant' },
+      { name: 'DomoSkills', logo: '/assets/logos/product/domoskills.png', desc: 'Agentic Skills Marketplace' },
+      { name: 'AgentDeck', logo: '/assets/logos/product/agentdeck.webp', desc: 'Autonomous Agent Platform' },
+      { name: 'HireMe', logo: '/assets/logos/product/hireme.webp', desc: 'Developer Career Engine' }
     ],
     image: {
       src: '/assets/photos/profile.png',
@@ -161,8 +173,8 @@ export const slides: SlideData[] = [
       { label: 'The Message', text: 'Stay humble, remain insatiably curious, build without fear, and remember where you started.' }
     ],
     image: {
-      src: '/assets/photos/domo_mascot.png',
-      alt: 'DomoDomo with signature cap',
+      src: '/assets/logos/domodomo_logo.png',
+      alt: 'DomoDomo official logo with signature cap',
       caption: 'The signature cap: A symbol of curiosity and humility'
     },
     notes: [

@@ -7,6 +7,9 @@ export interface SlideData {
   layout: 
     | 'hero' 
     | 'creator' 
+    | 'app-showcase'
+    | 'buddy-showcase'
+    | 'end-credits'
     | 'story-hackathon' 
     | 'story-cap' 
     | 'community' 
@@ -22,6 +25,13 @@ export interface SlideData {
   quote?: string;
   bullets?: Array<{ label?: string; text: string }>;
   stats?: Array<{ value: string; label: string }>;
+  tags?: string[];
+  phonePair?: Array<{
+    src: string;
+    alt: string;
+    caption?: string;
+    badge?: string;
+  }>;
   image?: {
     src: string;
     alt: string;
@@ -42,72 +52,71 @@ export interface SlideData {
 }
 
 export const slides: SlideData[] = [
-  // 01 — TITLE
+  // 01 — TITLE & HERO: DOMODOMO x BUDDY
   {
     id: 1,
-    tag: '01 / 15',
-    eyebrow: '',
-    headline: 'DomoDomo',
-    subheadline: 'From Student Struggles to Hackathon Glory',
+    tag: '01 / 14',
+    eyebrow: 'AppBuildersPH 2026',
+    headline: 'DomoDomo × Buddy',
+    subheadline: 'From Student Frustrations to Open-Source Agentic AI & Assistive Vision',
     layout: 'hero',
-    bullets: [
-      { label: 'Privacy', text: '100% Client-Side Execution & Local Storage' },
-      { label: 'Ecosystem', text: 'Unified Platform Across 240+ Open Tools' },
-      { label: 'Community', text: 'Built for Students, Developers, and Open Web' },
-    ],
     image: {
-      src: '/assets/logos/domodomo_logo (1).jpg',
+      src: '/assets/logos/domodomo_logo.png',
       alt: 'DomoDomo Official Logo',
       caption: 'DomoDomo: The Open-Source Local-First Platform',
     },
+    secondaryImage: {
+      src: '/assets/logos/product/buddy.webp',
+      alt: 'Buddy Official Mascot App Icon',
+      caption: 'Buddy: Seeing Assistant & Edge Vision Glasses',
+    },
     notes: [
       'Welcome everyone to today’s presentation for AppBuildersPH.',
-      'Introduce the theme: how a genuine student pain point evolved into an open-source movement.',
-      'Highlight the key differentiator: 100% client-side, zero cloud dependencies, private by default.'
+      'Introduce the dual story: DomoDomo (local-first browser tools & agentic AI) and Buddy (AI guide dog & smart glasses).',
+      'Highlight our core mission: student builders turning daily challenges into free, private, impactful technology.'
     ]
   },
 
   // 02 — THE CREATOR
   {
     id: 2,
-    tag: '02 / 15',
+    tag: '02 / 14',
     eyebrow: 'Speaker Introduction',
     headline: 'Arron Parejas',
-    subheadline: 'Machine Learning Engineer Intern, Community Builder, and Founder of DomoDomo.',
+    subheadline: 'Machine Learning Engineer Intern & Founder of DomoDomo',
     layout: 'creator',
     bullets: [
       { label: 'Role', text: 'Machine Learning Engineer Intern & Open-Source Maintainer' },
       { label: 'Leadership', text: 'Former GDGoC – Holy Angel University Chapter Lead' },
-      { label: 'Competition', text: 'Hackathon Champion (Caffeine.ai Championship Winner)' },
-      { label: 'Philosophy', text: '"Technology is more than code—it is about creating opportunities and helping communities grow together."' },
-      { label: 'Shipped Products', text: 'DomoDomo, Buddy, DomoSkills, AgentDeck, HireMe, and more' }
+      { label: 'Competition', text: 'Caffeine.ai Hackathon Champion' },
+      { label: 'Philosophy', text: '"Technology is about creating opportunities and helping communities grow together."' },
+      { label: 'Shipped', text: 'DomoDomo, Buddy, DomoSkills, AgentDeck, HireMe' }
     ],
     image: {
       src: '/assets/photos/profile.png',
       alt: 'Arron Parejas',
-      caption: 'Arron Parejas — Founder & Machine Learning Engineer Intern'
+      caption: 'Arron Parejas — Founder & ML Engineer Intern'
     },
     notes: [
-      'Share personal background as a student engineer and community organizer.',
-      'Reflect on the transition from building solo hobby projects to leading developer communities.',
-      'Set the stage for why community and open access drive every line of code written.'
+      'Share student background and community leadership with GDGoC-HAU.',
+      'Walk through the stacked suite of 5+ deployed products.',
+      'Emphasize how community empathy drives every open-source project.'
     ]
   },
 
-  // 03 — THE STUDENT STRUGGLE
+  // 03 — THE STUDENT STRUGGLE (GENESIS)
   {
     id: 3,
-    tag: '03 / 15',
-    eyebrow: 'Genesis & Origin',
+    tag: '03 / 14',
+    eyebrow: 'Genesis & Problem',
     headline: 'The Student Struggle',
-    subheadline: 'Before DomoDomo became a platform, it started as a simple frustration born from late-night student life.',
+    subheadline: 'Before DomoDomo and Buddy existed, it all started as a late-night frustration.',
     layout: 'philosophy',
-    quote: '"We kept asking ourselves: What if everything people need could exist in one place?"',
+    quote: '"What if everything a builder needs could exist in one unified, private space?"',
     bullets: [
-      { label: 'Tab Overload', text: 'Constantly switching between 10–15 websites just to finish a single task.' },
-      { label: 'Fragmented Web', text: 'One site for AI, another for coding, one for PDFs, OCR, writing, and image generation.' },
-      { label: 'Paywalls & Subscriptions', text: 'Hit with $20/month paywalls, 3-action daily limits, and predatory cloud subscriptions.' },
-      { label: 'Privacy Concerns', text: 'Uploading private homework, thesis drafts, code, and documents to random servers.' }
+      { label: 'Tab Overload', text: '15+ single-purpose websites open just to complete one assignment.' },
+      { label: 'Paywall Fatigue', text: '$20/month subscriptions and 3-action daily limits on basic tools.' },
+      { label: 'Zero Privacy', text: 'Forced to upload homework, thesis drafts, and code to unknown cloud servers.' }
     ],
     stats: [
       { value: '15+', label: 'Tabs open per task' },
@@ -115,26 +124,25 @@ export const slides: SlideData[] = [
       { value: '100%', label: 'Desire for simplicity' }
     ],
     notes: [
-      'Relate directly to the audience: who here has had 30 tabs open just to complete an assignment?',
-      'Emphasize the pain of hidden paywalls when students are on a tight budget.',
-      'Explain that DomoDomo was born from empathy and real lived experience.'
+      'Relate directly to the room: who hasn’t had 20 tabs open just to convert a PDF or test regex?',
+      'Emphasize the financial and privacy burden on students and indie builders.',
+      'Set up DomoDomo as the local-first antidote.'
     ]
   },
 
-  // 04 — THE REUNION & CAFFEINE.AI HACKATHON
+  // 04 — THE REUNION & THE WIN
   {
     id: 4,
-    tag: '04 / 15',
+    tag: '04 / 14',
     eyebrow: 'The Turning Point',
     headline: 'The Reunion & The Win',
-    subheadline: 'Reunited after almost five years post-pandemic to build with sleepless nights, pure grit, and no expectations.',
+    subheadline: 'Reunited after 5 years at Caffeine.ai Hackathon with pure grit and no expectations.',
     layout: 'story-hackathon',
-    quote: '"That very first reunion also became our very first hackathon championship. It reminded us that the best opportunities arrive when you least expect them."',
+    quote: '"That very first reunion became our championship—and gave DomoDomo its signature cap."',
     bullets: [
-      { label: '5-Year Gap', text: 'Reunited with teammate Ram at the Caffeine.ai Hackathon for the first time since the pandemic.' },
-      { label: 'All-In Dedication', text: 'Poured wild ideas, caffeine, and endless determination into our prototype.' },
-      { label: 'Unforeseen Victory', text: 'Without expecting anything, we walked away as Hackathon Champions.' },
-      { label: 'The Spark', text: 'Proved that our vision for unified, local tools resonated with judges and developers alike.' }
+      { label: '5-Year Reunion', text: 'Teamed up with Ram Guinto post-pandemic to build with sleepless determination.' },
+      { label: 'Hackathon Champions', text: 'Walked away with 1st place, proving the power of unified local tooling.' },
+      { label: 'The Signature Cap', text: 'The freebie event cap we wore during the pitch became Domo’s permanent mascot crown.' }
     ],
     image: {
       src: '/assets/photos/hackathon.png',
@@ -143,106 +151,76 @@ export const slides: SlideData[] = [
       badge: 'Hackathon Champion'
     },
     notes: [
-      'Speak from the heart about reuniting with Ram.',
-      'Describe the atmosphere of the Caffeine.ai hackathon—the pressure, the excitement, and the fun.',
-      'Highlight how validation in competition sparked the drive to make DomoDomo a global open platform.'
+      'Share the emotional story of reuniting with Ram after five years.',
+      'Explain the mascot’s signature cap: a reminder to stay humble and remember where we started.',
+      'Validation in competition sparked the mission to build an open platform for the world.'
     ]
   },
 
-  // 05 — THE STORY OF THE SIGNATURE CAP
+  // 05 — ARCHITECTURE: ZERO-SERVER SANDBOX
   {
     id: 5,
-    tag: '05 / 15',
-    eyebrow: 'Symbolism & Culture',
-    headline: 'The Story of the Cap',
-    subheadline: 'Many think it is just a mascot accessory. In reality, it is a living tribute to where our journey began.',
-    layout: 'story-cap',
-    quote: '"When we designed DomoDomo, we gave it a cap as a tribute to that unforgettable experience—a reminder to always stay curious, keep building, and never forget our roots."',
-    bullets: [
-      { label: 'The Freebie Cap', text: 'During our first hackathon, participants received simple event caps as freebies.' },
-      { label: 'The Uniform', text: 'We wore those caps through every sleepless hour, debugging session, and the final pitch.' },
-      { label: 'The Mascot Tribute', text: 'When creating DomoDomo the panda, the cap was crowned as its permanent icon.' },
-      { label: 'The Message', text: 'Stay humble, remain insatiably curious, build without fear, and remember where you started.' }
-    ],
-    image: {
-      src: '/assets/logos/domodomo_logo.png',
-      alt: 'DomoDomo official logo with signature cap',
-      caption: 'The signature cap: A symbol of curiosity and humility'
-    },
-    notes: [
-      'Share the story of the free hackathon cap.',
-      'Audiences love grounding mascot designs in real human stories.',
-      'Connect the cap to the mindset: never let success make you forget your early struggles.'
-    ]
-  },
-
-  // 06 — COMMUNITY AS THE CATALYST
-  {
-    id: 6,
-    tag: '06 / 15',
-    eyebrow: 'Mentorship & Leadership',
-    headline: 'Community as Catalyst',
-    subheadline: 'Leading Google Developer Groups on Campus taught me that technology is not just about syntax—it is about people.',
-    layout: 'community',
-    quote: '"Being surrounded by passionate student developers taught me that technology is about creating opportunities, helping others learn, and building spaces where everyone can grow."',
-    bullets: [
-      { label: 'GDGoC Chapter Lead', text: 'Led student developers, mentors, and builders at Holy Angel University.' },
-      { label: 'Mentorship Flywheel', text: 'Mentored junior developers while learning from senior architects.' },
-      { label: 'Democratizing Knowledge', text: 'Workshops, hackathons, and open sessions shaped the open vision of DomoDomo.' },
-      { label: 'Shared Success', text: 'Seeing peers ship their first software solidified the mission to give back freely.' }
-    ],
-    image: {
-      src: '/assets/photos/achievement.png',
-      alt: 'GDGoC Community & Recognition',
-      caption: 'Community Leadership & Industry Recognition',
-      badge: 'GDGoC Community Lead'
-    },
-    notes: [
-      'Reflect on GDGoC-HAU experiences.',
-      'Explain how community leadership shaped DomoDomo: if a student in our club had no money for tools, what could we build for them?',
-      'Emphasize that DomoDomo is a tribute to student communities everywhere.'
-    ]
-  },
-
-  // 07 — EVOLUTION PHASE 1: WEB UTILITIES
-  {
-    id: 7,
-    tag: '07 / 15',
-    eyebrow: 'Architecture Evolution · Phase 1',
-    headline: 'From Web Utilities to Client Sandbox',
-    subheadline: 'How we eliminated the server entirely using modern browser WebAssembly and native APIs.',
+    tag: '05 / 14',
+    eyebrow: 'Architecture · Phase 1',
+    headline: '100% Client-Side Sandbox',
+    subheadline: 'Eliminating the server completely with modern WebAssembly and browser APIs.',
     layout: 'evolution-utilities',
     bullets: [
-      { label: 'Zero-Server Architecture', text: 'Every PDF merge, video crop, format conversion, and OCR happens inside the browser memory.' },
-      { label: 'High-Performance WASM', text: 'Powered by FFmpeg.wasm, pdf-lib, Tesseract.js, and Web Audio API.' },
-      { label: 'Zero Data Leaks', text: 'No uploads, no cloud databases, zero telemetry. Files never leave the user’s device.' },
-      { label: 'Instant Sandbox', text: 'No login walls, no cookies, no API rate limits. Instant utilities on first page load.' }
+      { label: 'Zero Cloud Uploads', text: 'Every conversion, merge, and edit executes in browser RAM. Zero telemetry.' },
+      { label: 'WASM Performance', text: 'Powered by FFmpeg.wasm, pdf-lib, Tesseract.js, and Web Audio APIs.' },
+      { label: 'Instant & Offline', text: 'No logins, no cookies, no rate limits. Fully operational without internet.' }
     ],
     stats: [
-      { value: '0 bytes', label: 'Cloud data sent' },
+      { value: '0 bytes', label: 'Data sent to servers' },
       { value: '<50ms', label: 'Local execution' },
       { value: '100%', label: 'Offline capability' }
     ],
     notes: [
-      'Explain the engineering behind Phase 1.',
-      'Explain how WebAssembly changed the game for browser applications.',
-      'Emphasize why privacy matters: students and companies cannot risk uploading confidential PDFs.'
+      'Explain the architectural revolution: why move processing from cloud servers to the user’s device?',
+      'Detail WebAssembly: compiling C/C++ libraries like FFmpeg and Tesseract directly into the browser.',
+      'Highlight total privacy: confidential student and corporate documents never touch the wire.'
     ]
   },
 
-  // 08 — EVOLUTION PHASE 2: LOCAL AGENTIC AI
+  // 06 — FEATURE 1: 240+ WEB TOOLS ECOSYSTEM
   {
-    id: 8,
-    tag: '08 / 15',
-    eyebrow: 'Architecture Evolution · Phase 2',
-    headline: 'The Leap to Local Agentic AI',
-    subheadline: 'Bridging client-side utilities with local Ollama runtimes and browser-embedded neural networks.',
+    id: 6,
+    tag: '06 / 14',
+    eyebrow: 'Domo Feature 01 · Utility Ecosystem',
+    headline: '240+ Offline Browser Utilities',
+    subheadline: 'Seventeen categorized tool suites engineered for students, engineers, and creators.',
+    layout: 'tools-ecosystem',
+    bullets: [
+      { label: 'PDF & Documents', text: 'Merge, split, compress, watermark, sign, encrypt, and redact.' },
+      { label: 'Media & Spatial', text: 'AI background remover, CR2 raw converter, upscaler, 3D model viewer.' },
+      { label: 'Developer Suite', text: 'JWT debugger, regex playground, Docker Compose builder, JSON parser.' },
+      { label: 'Security & Forensics', text: 'File hash checker, password analyzer, metadata stripper, deepfake detection.' }
+    ],
+    image: {
+      src: '/assets/screenshots/categories.png',
+      alt: 'DomoDomo 240+ Categories & Tools Grid',
+      caption: '17-suite directory running 100% client-side',
+      badge: '240+ Utilities'
+    },
+    notes: [
+      'Showcase the enormous breadth of the platform across 17 distinct suites.',
+      'Emphasize that every tool is completely free with zero accounts or daily quotas.',
+      'Show how this eliminates the need for 15+ disparate commercial subscription tools.'
+    ]
+  },
+
+  // 07 — FEATURE 2: LOCAL AI HUB
+  {
+    id: 7,
+    tag: '07 / 14',
+    eyebrow: 'Domo Feature 02 · Local AI Intelligence',
+    headline: 'The Domo AI Hub',
+    subheadline: 'Private, offline LLMs and embeddings running directly on your laptop.',
     layout: 'evolution-agentic',
     bullets: [
-      { label: 'Direct Ollama Runtimes', text: 'Connects directly to local Ollama on localhost:11434 with CORS-free streaming SSE.' },
-      { label: 'Browser Transformers', text: 'Runs @xenova/transformers (all-MiniLM-L6-v2, DistilBERT) purely in WebAssembly.' },
-      { label: 'Dynamic Spec Detection', text: 'Inspects CPU cores & RAM to suggest optimal local models (e.g. Llama 3.2 1B, Qwen 2.5).' },
-      { label: 'No $20/mo Subscriptions', text: 'Bringing state-of-the-art LLMs, coding assistants, and OCR to any laptop without cloud cost.' }
+      { label: 'Direct Ollama Runtimes', text: 'Connects directly to localhost:11434 via streaming SSE with zero cloud GPU fees.' },
+      { label: 'Browser Transformers', text: 'Runs WASM embeddings (@xenova/transformers) purely on the client with zero telemetry.' },
+      { label: 'Dynamic Spec Detection', text: 'Inspects CPU cores & RAM to suggest optimal local models (Llama 3.2 1B, Qwen 2.5).' }
     ],
     image: {
       src: '/assets/screenshots/ai_hub.png',
@@ -257,78 +235,22 @@ export const slides: SlideData[] = [
     ]
   },
 
-  // 09 — THE 240+ TOOLS ECOSYSTEM
+  // 08 — FEATURE 3: DOMOSKILLS
   {
-    id: 9,
-    tag: '09 / 15',
-    eyebrow: 'Product Breakdown · We Offer You an Ecosystem',
-    headline: '240+ Offline Browser Utilities',
-    subheadline: 'We offer you an ecosystem: seventeen categorized tool suites engineered for students, engineers, creators, and researchers.',
-    layout: 'tools-ecosystem',
-    bullets: [
-      { label: 'PDF Suite', text: 'Merge, split, compress, watermark, sign, encrypt, and edit PDF documents locally.' },
-      { label: 'Photo & Media Suite', text: 'AI background remover, CR2 raw converter, upscaler, and collage studio.' },
-      { label: 'Security & Forensics', text: 'File hash checker, password analyzer, metadata stripper, deepfake detection.' },
-      { label: 'Developer Suite', text: 'JWT signer, regex tester, Docker Compose builder, JSON parser, subnet calculator.' },
-      { label: 'Spatial 3D & Audio', text: '3D model inspector, mesh decimator, point cloud visualizer, spatial audio renderer.' }
-    ],
-    image: {
-      src: '/assets/screenshots/categories.png',
-      alt: 'DomoDomo 240+ Categories & Tools Grid',
-      caption: 'Comprehensive 17-suite directory running 100% client-side',
-      badge: '240+ Utilities'
-    },
-    notes: [
-      'Take the audience through the vast scale of the platform.',
-      'Highlight unexpected suites like Spatial 3D and Machine Learning Evaluators.',
-      'Reiterate that all 240+ utilities are free, offline, and require no account registration.'
-    ]
-  },
-
-  // 10 — DEEP DIVE: DOMO AGENT HUB
-  {
-    id: 10,
-    tag: '10 / 15',
-    eyebrow: 'Technical Core',
-    headline: 'The Domo Agent Hub',
-    subheadline: 'Autonomous multi-agent orchestration, MCP integration, and reflective cognitive journaling.',
-    layout: 'agent-hub',
-    bullets: [
-      { label: 'Multi-Agent Personas', text: 'Chain specialized roles: Domo Architect, Hacker, and Auditor executing in sequence or parallel.' },
-      { label: 'Local MCP Server', text: 'Model Context Protocol (SSE) granting local LLMs secure filesystem and tool execution capabilities.' },
-      { label: 'Cognitive Journaling', text: 'Agents write introspective logs to domo_journal.md detailing reasoning steps and lessons.' },
-      { label: 'Browser Memory & RAG', text: 'IndexedDB + SQLite WAL handles semantic vector tables and timeline context natively.' }
-    ],
-    image: {
-      src: '/assets/screenshots/flow_studio.png',
-      alt: 'DomoDomo Agent Flow Studio',
-      caption: 'Visual Multi-Agent Flow Studio & Persona Pipelines',
-      badge: 'Autonomous Agents'
-    },
-    notes: [
-      'Deep dive into the Agentic architecture.',
-      'Explain Model Context Protocol (MCP) and why local agents need safe filesystem tools.',
-      'Mention the cognitive journaling feature: agents that reflect on their own debugging.'
-    ]
-  },
-
-  // 11 — DOMOSKILLS: THE AGENT MARKETPLACE
-  {
-    id: 11,
-    tag: '11 / 15',
-    eyebrow: 'The Next Frontier',
+    id: 8,
+    tag: '08 / 14',
+    eyebrow: 'Domo Feature 03 · Agent Superpowers',
     headline: 'Introducing DomoSkills',
     subheadline: 'Turning web utilities into callable superpowers for modern AI coding agents.',
     layout: 'domoskills',
     bullets: [
-      { label: 'Agentic Ecosystem', text: 'Over 200+ specialized skills tailored for Google Antigravity, Claude Code, Cursor, and Codex.' },
+      { label: 'Agentic Ecosystem', text: 'Over 1k+ specialized skills tailored for Google Antigravity, Claude Code, Cursor, and Codex.' },
       { label: 'One-Line Installation', text: 'Install verified skills instantly via npx / agy CLI with zero friction.' },
-      { label: 'Bridge to Reality', text: 'Allows autonomous agents to manipulate PDFs, test security headers, and parse media on the fly.' },
-      { label: 'Open Registry', text: 'Community-driven registry where developers can contribute and publish custom skills.' }
+      { label: 'Bridge to Reality', text: 'Allows autonomous agents to manipulate PDFs, test security headers, and parse media on the fly.' }
     ],
     stats: [
-      { value: '200+', label: 'Agent Skills' },
-      { value: '4+', label: 'Supported Agents' },
+      { value: '1k+', label: 'Agent Skills' },
+      { value: '5+', label: 'Supported Agents' },
       { value: '1 CLI', label: 'Zero setup command' }
     ],
     notes: [
@@ -338,25 +260,25 @@ export const slides: SlideData[] = [
     ]
   },
 
-  // 12 — ADVANCED AI STUDIO
+  // 09 — FEATURE 4: FLOW STUDIO & ADVANCED ML
   {
-    id: 12,
-    tag: '12 / 15',
-    eyebrow: 'Advanced Capabilities',
-    headline: 'Flow Automation, Fine-Tuning & Local RAG',
-    subheadline: 'Professional-grade machine learning workflows executing locally on developer hardware.',
+    id: 9,
+    tag: '09 / 14',
+    eyebrow: 'Domo Feature 04 · Visual Workflows',
+    headline: 'Flow Studio & Local RAG',
+    subheadline: 'Visual multi-agent orchestration, client-side vector search, and fine-tuning planning.',
     layout: 'advanced-studio',
     bullets: [
-      { label: 'Node-Based Flow Studio', text: 'Visually connect data inputs, prompt generators, formatters, and evaluators.' },
-      { label: '6 Fine-Tuning Strategies', text: 'LoRA, QLoRA, Full Fine-Tuning, and DPO with dynamic VRAM calculations.' },
-      { label: 'Client-Side Vector RAG', text: 'Semantic document search with in-memory embeddings and chunk re-ranking.' },
-      { label: 'Model Benchmarking', text: 'Latency profiling, token-per-second measuring, and confusion matrix evaluators.' }
+      { label: 'Visual Flow Pipelines', text: 'Node-based canvas chaining data inputs, prompt generators, formatters, and evaluators.' },
+      { label: 'Client-Side Vector RAG', text: 'Semantic document search with in-memory chunking, cosine similarity, and re-ranking.' },
+      { label: 'Prompt Tuning Lab', text: 'Benchmark prompts locally across quantization levels with real-time latency and token metrics.' },
+      { label: 'Fine-Tuning Planner', text: 'Calculate VRAM requirements for LoRA, QLoRA, and DPO before executing.' }
     ],
     image: {
-      src: '/assets/screenshots/finetune.png',
-      alt: 'Local Fine-Tuning Studio',
-      caption: 'Local Fine-Tuning & Quantization Planning Studio',
-      badge: 'ML Studio'
+      src: '/assets/screenshots/flow_studio.png',
+      alt: 'Local Flow Studio',
+      caption: 'Visual Node-Based Agent Pipeline Studio',
+      badge: 'Flow Studio'
     },
     secondaryImage: {
       src: '/assets/screenshots/rag_studio.png',
@@ -364,25 +286,106 @@ export const slides: SlideData[] = [
       caption: 'Local RAG Search & Chunk Visualizer'
     },
     notes: [
-      'Showcase the visual polish of the Fine-Tuning and RAG studios.',
-      'Emphasize that advanced AI tools should not require a team of ML PhDs or a cloud enterprise contract.',
-      'Highlight visual node-based flow automation.'
+      'Showcase the visual polish of the Flow Studio and Local RAG search.',
+      'Emphasize that advanced AI workflows should not require cloud enterprise subscriptions.',
+      'Demonstrate visual node-based multi-agent coordination.'
     ]
   },
 
-  // 13 — SIGNIFICANCE TO STUDENTS & DEVELOPERS
+  // 10 — BUDDY: AN AI GUIDE DOG IN YOUR POCKET
   {
-    id: 13,
-    tag: '13 / 15',
+    id: 10,
+    tag: '10 / 14',
+    eyebrow: 'Thesis Spotlight · Assistive Tech',
+    headline: 'Buddy: An AI Guide Dog in Your Pocket',
+    subheadline: 'A friendly seeing assistant mobile app designed for visually impaired and neurodivergent users.',
+    layout: 'buddy-showcase',
+    bullets: [
+      { label: 'Sees The World Live', text: 'Uses your phone camera to spot chairs, doors, and obstacles so you can walk with total confidence.' },
+      { label: 'Speaks Like a Friend', text: 'Conversational guide in English and native Tagalog that gives turn-by-turn directions and reads nearby text.' },
+      { label: '100% Private On-Device', text: 'Runs Gemma 2B AI completely offline inside your phone—no internet or cloud servers needed.' }
+    ],
+    tags: [
+      'Local Gemma 2B AI',
+      'English & Filipino Voice',
+      'Turn-by-Turn Voice Nav',
+      'Nearby Text OCR',
+      'Emergency SOS'
+    ],
+    phonePair: [
+      {
+        src: '/assets/logos/buddy/buddy_onboarding.jpeg',
+        alt: 'Buddy Accessible Onboarding',
+        caption: 'Friendly accessible onboarding',
+        badge: 'Buddy Mascot'
+      },
+      {
+        src: '/assets/logos/buddy/buddy_dashboard.jpeg',
+        alt: 'Buddy Voice Dashboard',
+        caption: 'Voice dashboard & navigation controls',
+        badge: 'Voice Dashboard'
+      }
+    ],
+    notes: [
+      'Introduce Buddy (EasyLens)—our undergraduate thesis at Holy Angel University.',
+      'Explain the ELI5 mission: What if anyone who has trouble seeing could carry a digital guide dog on their phone?',
+      'Highlight on-device Gemma 2B and native Filipino language support.'
+    ]
+  },
+
+  // 11 — BUDDY: SMART GLASSES & EDGE VISION
+  {
+    id: 11,
+    tag: '11 / 14',
+    eyebrow: 'Wearable Edge AI · ESP32 Hardware',
+    headline: 'Smart Glasses That See For You',
+    subheadline: 'Pairing 3D-printed wearable camera glasses with real-time obstacle detection.',
+    layout: 'buddy-showcase',
+    bullets: [
+      { label: 'Hands-Free ESP32 Glasses', text: 'A mini wireless camera mounted on 3D-printed frames streams what you face directly to your phone.' },
+      { label: 'Instant Hazard Alerts', text: 'Spots objects in milliseconds (laptops, stairs, doors) and warns you with gentle sounds & vibration.' },
+      { label: 'Emergency Lifeline', text: 'Shake the phone or tap SOS to immediately dispatch your location via emergency SMS.' }
+    ],
+    tags: [
+      'ESP32-CAM Smart Glasses',
+      'Live Bounding Boxes',
+      'Low-Latency Audio Cues',
+      'Haptic Proximity',
+      'Shake-to-Alert'
+    ],
+    phonePair: [
+      {
+        src: '/assets/logos/buddy/buddy_glasses.jpeg',
+        alt: 'EasyLens 3D-Printed Smart Glasses',
+        caption: '3D-printed wearable frame with ESP32-CAM module',
+        badge: 'Smart Glasses Hardware'
+      },
+      {
+        src: '/assets/logos/buddy/buddy_hud.jpeg',
+        alt: 'Buddy Real-Time Detection HUD',
+        caption: 'Live vision HUD with bounding box hazard scoring',
+        badge: 'Live Detection HUD'
+      }
+    ],
+    notes: [
+      'Explain the hardware side: We built custom 3D-printed glasses with an ESP32-CAM to keep users hands-free.',
+      'Explain the live HUD: The phone analyzes the camera stream in milliseconds and draws bounding boxes around hazards.',
+      'Connect back to the theme: Students building end-to-end edge AI systems that solve real human challenges.'
+    ]
+  },
+
+  // 12 — SIGNIFICANCE & IMPACT
+  {
+    id: 12,
+    tag: '12 / 14',
     eyebrow: 'Empowerment & Access',
-    headline: 'Why DomoDomo Matters',
-    subheadline: 'Breaking down barriers to technology for the next generation of builders.',
+    headline: 'Why DomoDomo & Buddy Matter',
+    subheadline: 'Breaking down technological and physical accessibility barriers for everyone.',
     layout: 'significance',
     bullets: [
-      { label: 'For Students', text: 'Free forever, zero subscription paywalls, no credit card required. A complete toolbox for assignments, study decks, and research.' },
-      { label: 'For Developers', text: 'Private sandbox for code conversion, JWT testing, regex prototyping, and local Ollama experimentation.' },
-      { label: 'For Privacy Advocates', text: 'Air-gapped safe. Ideal for sensitive medical, legal, and academic documents that cannot touch cloud servers.' },
-      { label: 'For Educators', text: 'Clean, safe, reproducible tools for classrooms without software installation hurdles.' }
+      { label: 'For Students', text: 'Free forever. Zero paywalls or credit cards for school, research, and coding.' },
+      { label: 'For Accessibility', text: 'Buddy provides an on-device digital seeing guide for visually impaired and neurodivergent users.' },
+      { label: 'For Privacy Advocates', text: '100% offline & client-side. Zero cloud telemetry for sensitive files and live video streams.' }
     ],
     stats: [
       { value: '100%', label: 'Free & Open Source' },
@@ -390,58 +393,45 @@ export const slides: SlideData[] = [
       { value: '∞', label: 'Possibilities' }
     ],
     notes: [
-      'Remind the room why open source matters.',
-      'Talk about accessibility: students in developing countries or underfunded schools deserve top-tier AI tools.',
-      'DomoDomo is an equalizer.'
+      'Speak passionately about accessibility and digital equity.',
+      'Students in developing regions and underfunded institutions deserve access to premier tools.',
+      'DomoDomo and Buddy are equalizers: private, open, and accessible to anyone.'
     ]
   },
 
-  // 14 — CORE PHILOSOPHY & LESSONS
+  // 13 — SHIP BEATS PERFECTION
   {
-    id: 14,
-    tag: '14 / 15',
-    eyebrow: 'Lessons from the Journey',
+    id: 13,
+    tag: '13 / 14',
+    eyebrow: 'Core Philosophy',
     headline: 'Ship Beats Perfection',
-    subheadline: 'What building DomoDomo taught us about engineering, growth, and perseverance.',
+    subheadline: 'What building DomoDomo and Buddy taught us about engineering, growth, and community.',
     layout: 'philosophy',
     quote: '"The student who ships ten imperfect projects will always outpace the one still perfecting their first."',
     bullets: [
-      { label: 'Build What You Need', text: 'The best products solve problems you personally feel every single day.' },
-      { label: 'Momentum Compounds', text: 'Consistency turns minor weekend experiments into platforms used by thousands.' },
-      { label: 'Community Over Code', text: 'Code gets replaced; the friendships, mentorships, and trust you build endure forever.' },
-      { label: 'Fail Forward', text: 'Every broken build and rejected pitch is just training data for your next breakthrough.' }
+      { label: 'Build What You Need', text: 'The best products solve problems you personally face every day.' },
+      { label: 'Momentum Compounds', text: 'Weekend experiments quietly compound into platforms used by thousands.' },
+      { label: 'Community Over Code', text: 'Code gets rewritten; the trust, friendships, and mentorship you build endure.' }
     ],
     notes: [
-      'Deliver the key inspirational takeaway.',
-      'Encourage every student in the audience to start shipping their ideas immediately.',
-      'Remind them that DomoDomo was once just a crazy question between friends.'
+      'Deliver the central inspirational takeaway for every student and developer in the room.',
+      'Encourage everyone to stop waiting for perfection and start shipping.',
+      'Remind them that DomoDomo was once just a crazy conversation between friends.'
     ]
   },
 
-  // 15 — THE FUTURE & CONNECT
+  // 14 — END CREDITS & THE BUILDERS
   {
-    id: 15,
-    tag: '15 / 15',
-    eyebrow: 'Looking Forward · 2026',
-    headline: 'Keep Building.',
-    subheadline: 'DomoDomo isn’t just an app—it’s an open invitation to create without limits.',
-    layout: 'closing-connect',
-    quote: '"Your first project doesn’t have to change the world. It only has to change you."',
-    bullets: [
-      { label: 'Website', text: 'domodomo.site' },
-      { label: 'GitHub', text: 'github.com/darknecrocities' },
-      { label: 'LinkedIn', text: 'linkedin.com/in/arron-parejas' },
-      { label: 'Portfolio', text: 'arronparejas.dev' }
-    ],
-    image: {
-      src: '/assets/photos/qrcode.png',
-      alt: 'QR Code to Connect',
-      caption: 'Scan to connect with Arron Parejas'
-    },
+    id: 14,
+    tag: '14 / 14',
+    eyebrow: 'End Credits · The Builders',
+    headline: 'Credits & Connect',
+    subheadline: 'Crafted with grit, caffeine, and open-source dedication by the Domo team.',
+    layout: 'end-credits',
     notes: [
-      'Thank the organizers and audience warmly.',
-      'Point to the QR code and invite everyone to connect, contribute, and build together.',
-      'End on an inspiring note: "Now go build something people need."'
+      'Thank Ram Guinto for exceptional front-end & design leadership.',
+      'Thank the audience, organizers, and AppBuildersPH community.',
+      'Invite everyone to scan the QR codes to connect on LinkedIn and explore their websites.'
     ]
   }
 ];

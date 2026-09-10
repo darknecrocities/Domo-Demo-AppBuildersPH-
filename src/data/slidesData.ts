@@ -90,7 +90,7 @@ export const slides: SlideData[] = [
       { label: 'Leadership', text: 'Former GDGoC – Holy Angel University Chapter Lead' },
       { label: 'Competition', text: 'Caffeine.ai Hackathon Champion' },
       { label: 'Philosophy', text: '"Technology is about creating opportunities and helping communities grow together."' },
-      { label: 'Shipped', text: 'DomoDomo, Buddy, DomoSkills, AgentDeck, HireMe' }
+      { label: 'Shipped', text: 'DomoDomo, Buddy, DomoSKills, Codepyne.io, AgentDeck, HireMe' }
     ],
     image: {
       src: '/assets/photos/profile.png',
@@ -235,16 +235,16 @@ export const slides: SlideData[] = [
     ]
   },
 
-  // 08 — FEATURE 3: DOMOSKILLS
+  // 08 — FEATURE 3: DOMOSKILLS (SKILLS MARKETPLACE)
   {
     id: 8,
     tag: '08 / 14',
-    eyebrow: 'Domo Feature 03 · Agent Superpowers',
-    headline: 'Introducing DomoSkills',
-    subheadline: 'Turning web utilities into callable superpowers for modern AI coding agents.',
+    eyebrow: 'Domo Feature 03 · SKills Marketplace',
+    headline: 'Introducing DomoSKills',
+    subheadline: 'The decentralized skills marketplace and superpower engine turning web utilities into callable actions for AI coding agents.',
     layout: 'domoskills',
     bullets: [
-      { label: 'Agentic Ecosystem', text: 'Over 1k+ specialized skills tailored for Google Antigravity, Claude Code, Cursor, and Codex.' },
+      { label: 'SKills Marketplace', text: 'Over 1k+ specialized skills tailored for Google Antigravity, Claude Code, Cursor, and Codex.' },
       { label: 'One-Line Installation', text: 'Install verified skills instantly via npx / agy CLI with zero friction.' },
       { label: 'Bridge to Reality', text: 'Allows autonomous agents to manipulate PDFs, test security headers, and parse media on the fly.' }
     ],

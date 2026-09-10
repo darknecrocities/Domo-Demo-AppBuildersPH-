@@ -8,15 +8,16 @@ export interface AppIconItem {
   role: string;
   logo: string;
   badge: string;
+  hasFrame?: boolean;
 }
 
 export const PURE_APP_ICONS: AppIconItem[] = [
   {
     id: 'domoskills',
-    name: 'DomoSkills',
-    role: 'Agent Superpowers CLI',
+    name: 'DomoSKills',
+    role: 'SKills Marketplace',
     logo: '/assets/logos/product/domoskills.png',
-    badge: 'Superpowers CLI'
+    badge: 'SKills Marketplace'
   },
   {
     id: 'buddy',
@@ -40,6 +41,14 @@ export const PURE_APP_ICONS: AppIconItem[] = [
     badge: 'Remote Agent'
   },
   {
+    id: 'codepyne',
+    name: 'Codepyne.io',
+    role: 'AI & ML Learning Platform',
+    logo: '/assets/logos/codepyne_icon.png',
+    badge: 'AI Upskilling',
+    hasFrame: true
+  },
+  {
     id: 'hireme',
     name: 'HireMe',
     role: 'AI Career & Showcase Engine',
@@ -48,10 +57,10 @@ export const PURE_APP_ICONS: AppIconItem[] = [
   }
 ];
 
-// Fan geometry parameters for large raw icons (130px size)
-const FAN_ANGLES = [-16, -8, 0, 8, 16];
-const FAN_X_OFFSETS = [-140, -70, 0, 70, 140];
-const FAN_Y_OFFSETS = [18, 6, 0, 6, 18];
+// Fan geometry parameters for large raw icons (130px size) — 6 items
+const FAN_ANGLES = [-18, -10, -3, 3, 10, 18];
+const FAN_X_OFFSETS = [-160, -96, -32, 32, 96, 160];
+const FAN_Y_OFFSETS = [20, 8, 1, 1, 8, 20];
 
 interface AppIconStackProps {
   onOpenLightbox: (src: string, caption?: string) => void;
@@ -98,25 +107,25 @@ export const AppIconStack: React.FC<AppIconStackProps> = ({
                 glare={true}
                 maxGlare={0.45}
                 className="app-icon-tilt-wrapper"
-                onClick={() => onOpenLightbox(app.logo, `${app.name} — ${app.role}`)}
+                onClick={() => onOpenLightbox(app.logo, `${app.name} - ${app.role}`)}
               >
                 <div
-                  className={`raw-app-icon-target ${isHovered ? 'hovered' : ''}`}
-                  title={`${app.name}: ${app.role} (Click to expand)`}
+                  className={`raw-app-icon-target ${app.hasFrame ? 'framed' : ''} ${isHovered ? 'hovered' : ''}`}
+                  title={`${app.name} - ${app.role} (Click to expand)`}
                   tabIndex={0}
                   role="button"
                   aria-label={`${app.name} App Icon`}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault();
-                      onOpenLightbox(app.logo, `${app.name} — ${app.role}`);
+                      onOpenLightbox(app.logo, `${app.name} - ${app.role}`);
                     }
                   }}
                 >
                   <img
                     src={app.logo}
                     alt={app.name}
-                    className="raw-app-icon-img"
+                    className={`raw-app-icon-img ${app.hasFrame ? 'framed-img' : ''}`}
                   />
 
                   {isHovered && (
@@ -131,8 +140,9 @@ export const AppIconStack: React.FC<AppIconStackProps> = ({
               {/* Floating Tooltip Pill */}
               {isHovered && (
                 <div className="app-icon-floating-tooltip" aria-hidden="true">
-                  <div className="app-icon-tooltip-name">{app.name}</div>
-                  <div className="app-icon-tooltip-role">{app.role}</div>
+                  <span className="app-icon-tooltip-name">{app.name}</span>
+                  <span className="app-icon-tooltip-sep">-</span>
+                  <span className="app-icon-tooltip-role">{app.role}</span>
                 </div>
               )}
             </div>
@@ -142,7 +152,7 @@ export const AppIconStack: React.FC<AppIconStackProps> = ({
 
       <div className="app-icon-stack-hint">
         <Sparkles size={11} />
-        <span>5+ Apps Deployed &bull; Click any icon to expand</span>
+        <span>6+ Apps Deployed &bull; Click any icon to expand</span>
       </div>
     </div>
   );

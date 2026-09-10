@@ -472,7 +472,7 @@ html, body {
 .app-icon-fan-arc {
   position: relative;
   height: 165px;
-  width: 440px;
+  width: 510px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -514,7 +514,7 @@ html, body {
   position: relative;
   overflow: hidden;
   outline: none;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .raw-app-icon-target:hover,
@@ -533,6 +533,67 @@ html, body {
   border-radius: 26px;
   display: block;
   pointer-events: none;
+}
+
+/* Distinct Framed App Icon (Only Codepyne.io has this frame) */
+.raw-app-icon-target.framed {
+  background: linear-gradient(135deg, #181e2b 0%, #0c1017 100%);
+  border: 2.5px solid #f59e0b;
+  box-shadow: 
+    0 18px 40px -6px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(245, 158, 11, 0.3),
+    inset 0 0 16px rgba(245, 158, 11, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.raw-app-icon-target.framed:hover,
+.raw-app-icon-target.framed.hovered {
+  border-color: #facc15;
+  box-shadow: 
+    0 28px 56px -6px rgba(0, 0, 0, 0.95),
+    0 0 32px rgba(250, 204, 21, 0.5),
+    0 0 0 1.5px rgba(250, 204, 21, 0.7),
+    inset 0 0 22px rgba(250, 204, 21, 0.25);
+}
+
+.raw-app-icon-img.framed-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px 10px;
+  border-radius: 20px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+  pointer-events: none;
+}
+
+/* Light mode framing overrides */
+[data-theme='light'] .raw-app-icon-target:not(.framed) {
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 
+    0 16px 36px -4px rgba(0, 0, 0, 0.18),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .raw-app-icon-target.framed {
+  background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+  border: 2.5px solid #d97706;
+  box-shadow: 
+    0 16px 36px -4px rgba(217, 119, 6, 0.25),
+    0 0 0 1px rgba(217, 119, 6, 0.35),
+    inset 0 0 16px rgba(254, 240, 138, 0.45);
+}
+
+[data-theme='light'] .raw-app-icon-target.framed:hover,
+[data-theme='light'] .raw-app-icon-target.framed.hovered {
+  border-color: #b45309;
+  box-shadow: 
+    0 24px 48px -4px rgba(180, 83, 9, 0.35),
+    0 0 28px rgba(234, 179, 8, 0.45),
+    inset 0 0 18px rgba(254, 240, 138, 0.65);
+}
+
+[data-theme='light'] .raw-app-icon-img.framed-img {
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.18));
 }
 
 .app-icon-hover-expand-pill {
@@ -557,34 +618,84 @@ html, body {
 /* Floating Tooltip Pill (Above the Icon) */
 .app-icon-floating-tooltip {
   position: absolute;
-  top: -44px;
+  top: -46px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(6, 8, 12, 0.96);
-  border: 1px solid var(--border-bold);
   border-radius: 9999px;
-  padding: 4px 14px;
+  padding: 5px 16px;
   white-space: nowrap;
   pointer-events: none;
   z-index: 60;
   display: flex;
   align-items: center;
-  gap: 8px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.85);
+  gap: 7px;
   animation: fadeIn 0.15s ease-out;
+  /* Default fallback */
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-subtle);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Light Mode: High-contrast white pill with crisp dark text */
+[data-theme='light'] .app-icon-floating-tooltip {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.18) !important;
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.16), 0 4px 10px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme='light'] .app-icon-tooltip-name {
+  color: #09090b !important;
+}
+
+[data-theme='light'] .app-icon-tooltip-sep {
+  color: #71717a !important;
+}
+
+[data-theme='light'] .app-icon-tooltip-role {
+  color: #27272a !important;
+}
+
+/* Dark Mode: Sleek dark glass pill with crisp glowing text */
+[data-theme='dark'] .app-icon-floating-tooltip,
+:root:not([data-theme='light']) .app-icon-floating-tooltip {
+  background: rgba(10, 14, 23, 0.96) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9) !important;
+}
+
+[data-theme='dark'] .app-icon-tooltip-name,
+:root:not([data-theme='light']) .app-icon-tooltip-name {
+  color: #f8fafc !important;
+}
+
+[data-theme='dark'] .app-icon-tooltip-sep,
+:root:not([data-theme='light']) .app-icon-tooltip-sep {
+  color: #64748b !important;
+}
+
+[data-theme='dark'] .app-icon-tooltip-role,
+:root:not([data-theme='light']) .app-icon-tooltip-role {
+  color: #94a3b8 !important;
 }
 
 .app-icon-tooltip-name {
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 700;
-  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.app-icon-tooltip-sep {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.7;
 }
 
 .app-icon-tooltip-role {
   font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--text-secondary);
+  font-size: 10.5px;
+  font-weight: 500;
 }
 
 .app-icon-stack-hint {
@@ -1921,39 +2032,103 @@ ul.minimal-list li strong {
 }
 
 /* ---------------------------------------------------------
-   Lightbox Modal
+   Lightbox Modal (With 3D Gyro & Cursor Tilt Physics)
    --------------------------------------------------------- */
 .lightbox-modal {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.92);
-  backdrop-filter: blur(16px);
-  z-index: 200;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  z-index: 300;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 30px 20px;
   animation: fadeIn 0.2s ease both;
+  overflow: hidden;
 }
 
-.lightbox-modal img {
+.lightbox-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  z-index: 320;
+  cursor: pointer;
+}
+
+.lightbox-content-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   max-width: 90vw;
-  max-height: 80vh;
+  max-height: 86vh;
+  position: relative;
+  animation: modalPop 0.25s var(--ease-out-expo) both;
+}
+
+.lightbox-tilt-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+
+.lightbox-tilt-container:active {
+  cursor: grabbing;
+}
+
+.lightbox-image-frame {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 
+    0 35px 80px -15px rgba(0, 0, 0, 0.95),
+    0 0 45px rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  background: #0d1117;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-expanded-img {
+  max-width: clamp(260px, 80vw, 900px);
+  max-height: clamp(260px, 68vh, 720px);
+  width: auto;
+  height: auto;
   object-fit: contain;
-  background: #ffffff;
-  padding: 14px;
-  border-radius: 16px;
-  border: 1px solid var(--border-bold);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9);
+  display: block;
+  user-select: none;
 }
 
 .lightbox-caption {
-  margin-top: 16px;
+  margin-top: 18px;
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--text-secondary);
-  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: #f1f5f9;
+  letter-spacing: 0.03em;
+  text-align: center;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 6px 20px;
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-hint-cue {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.02em;
   text-align: center;
 }
 

@@ -56,7 +56,7 @@ export const slides: SlideData[] = [
   // 01 — TITLE & HERO: DOMODOMO x BUDDY
   {
     id: 1,
-    tag: '01 / 14',
+    tag: '01 / 13',
     eyebrow: 'AppBuildersPH 2026',
     headline: 'DomoDomo × Buddy',
     subheadline: 'From Student Frustrations to Open-Source Agentic AI & Assistive Vision',
@@ -81,7 +81,7 @@ export const slides: SlideData[] = [
   // 02 — THE CREATOR
   {
     id: 2,
-    tag: '02 / 14',
+    tag: '02 / 13',
     eyebrow: 'Speaker Introduction',
     headline: 'Arron Parejas',
     subheadline: 'Machine Learning Engineer Intern & Founder of DomoDomo',
@@ -108,7 +108,7 @@ export const slides: SlideData[] = [
   // 03 — THE STUDENT STRUGGLE (GENESIS)
   {
     id: 3,
-    tag: '03 / 14',
+    tag: '03 / 13',
     eyebrow: 'Genesis & Problem',
     headline: 'The Student Struggle',
     subheadline: 'Before DomoDomo and Buddy existed, it all started as a late-night frustration.',
@@ -134,7 +134,7 @@ export const slides: SlideData[] = [
   // 04 — THE REUNION & THE WIN
   {
     id: 4,
-    tag: '04 / 14',
+    tag: '04 / 13',
     eyebrow: 'The Turning Point',
     headline: 'The Reunion & The Win',
     subheadline: 'Reunited after 5 years at Caffeine.ai Hackathon with pure grit and no expectations.',
@@ -161,7 +161,7 @@ export const slides: SlideData[] = [
   // 05 — MISSION: WHY WE BUILT DOMODOMO (STUDENT & COMMUNITY LEADER)
   {
     id: 5,
-    tag: '05 / 14',
+    tag: '05 / 13',
     eyebrow: 'Why We Built DomoDomo · Core Mission',
     headline: 'Why We Built DomoDomo',
     subheadline: 'As a student builder and GDGoC community leader, I saw peers locked out of basic necessities by predatory paywalls.',
@@ -197,7 +197,7 @@ export const slides: SlideData[] = [
   // 06 — FEATURE 1: 240+ WEB TOOLS ECOSYSTEM
   {
     id: 6,
-    tag: '06 / 14',
+    tag: '06 / 13',
     eyebrow: 'Domo Feature 01 · Utility Ecosystem',
     headline: '240+ Offline Browser Utilities',
     subheadline: 'Seventeen categorized tool suites engineered for students, engineers, and creators.',
@@ -224,7 +224,7 @@ export const slides: SlideData[] = [
   // 07 — FEATURE 2: LOCAL AI HUB
   {
     id: 7,
-    tag: '07 / 14',
+    tag: '07 / 13',
     eyebrow: 'Domo Feature 02 · Local AI Intelligence',
     headline: 'The Domo AI Hub',
     subheadline: 'Private, offline LLMs and embeddings running directly on your laptop.',
@@ -250,7 +250,7 @@ export const slides: SlideData[] = [
   // 08 — FEATURE 3: DOMOSKILLS (SKILLS MARKETPLACE)
   {
     id: 8,
-    tag: '08 / 14',
+    tag: '08 / 13',
     eyebrow: 'Domo Feature 03 · SKills Marketplace',
     headline: 'Introducing DomoSKills',
     subheadline: 'The decentralized skills marketplace and superpower engine turning web utilities into callable actions for AI coding agents.',
@@ -275,7 +275,7 @@ export const slides: SlideData[] = [
   // 09 — FEATURE 4: FLOW STUDIO & ADVANCED ML
   {
     id: 9,
-    tag: '09 / 14',
+    tag: '09 / 13',
     eyebrow: 'Domo Feature 04 · Visual Workflows',
     headline: 'Flow Studio & Local RAG',
     subheadline: 'Visual multi-agent orchestration, client-side vector search, and fine-tuning planning.',
@@ -307,7 +307,7 @@ export const slides: SlideData[] = [
   // 10 — BUDDY: AN AI GUIDE DOG IN YOUR POCKET
   {
     id: 10,
-    tag: '10 / 14',
+    tag: '10 / 13',
     eyebrow: 'Thesis Spotlight · Assistive Tech',
     headline: 'Buddy: An AI Guide Dog in Your Pocket',
     subheadline: 'A friendly seeing assistant mobile app designed for visually impaired and neurodivergent users.',
@@ -348,7 +348,7 @@ export const slides: SlideData[] = [
   // 11 — BUDDY: SMART GLASSES & EDGE VISION
   {
     id: 11,
-    tag: '11 / 14',
+    tag: '11 / 13',
     eyebrow: 'Wearable Edge AI · ESP32 Hardware',
     headline: 'Smart Glasses That See For You',
     subheadline: 'Pairing 3D-printed wearable camera glasses with real-time obstacle detection.',
@@ -386,35 +386,10 @@ export const slides: SlideData[] = [
     ]
   },
 
-  // 12 — SIGNIFICANCE & IMPACT
+  // 12 — SHIP BEATS PERFECTION
   {
     id: 12,
-    tag: '12 / 14',
-    eyebrow: 'Empowerment & Access',
-    headline: 'Why DomoDomo & Buddy Matter',
-    subheadline: 'Breaking down technological and physical accessibility barriers for everyone.',
-    layout: 'significance',
-    bullets: [
-      { label: 'For Students', text: 'Free forever. Zero paywalls or credit cards for school, research, and coding.' },
-      { label: 'For Accessibility', text: 'Buddy provides an on-device digital seeing guide for visually impaired and neurodivergent users.' },
-      { label: 'For Privacy Advocates', text: '100% offline & client-side. Zero cloud telemetry for sensitive files and live video streams.' }
-    ],
-    stats: [
-      { value: '100%', label: 'Free & Open Source' },
-      { value: '0', label: 'Telemetry Trackers' },
-      { value: '∞', label: 'Possibilities' }
-    ],
-    notes: [
-      'Speak passionately about accessibility and digital equity.',
-      'Students in developing regions and underfunded institutions deserve access to premier tools.',
-      'DomoDomo and Buddy are equalizers: private, open, and accessible to anyone.'
-    ]
-  },
-
-  // 13 — SHIP BEATS PERFECTION
-  {
-    id: 13,
-    tag: '13 / 14',
+    tag: '12 / 13',
     eyebrow: 'Core Philosophy',
     headline: 'Ship Beats Perfection',
     subheadline: 'What building DomoDomo and Buddy taught us about engineering, growth, and community.',
@@ -432,10 +407,10 @@ export const slides: SlideData[] = [
     ]
   },
 
-  // 14 — END CREDITS & THE BUILDERS
+  // 13 — END CREDITS & THE BUILDERS
   {
-    id: 14,
-    tag: '14 / 14',
+    id: 13,
+    tag: '13 / 13',
     eyebrow: 'End Credits · The Builders',
     headline: 'Credits & Connect',
     subheadline: 'Crafted with grit, caffeine, and open-source dedication by the Domo team.',

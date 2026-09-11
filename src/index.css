@@ -269,6 +269,167 @@ html, body {
 }
 
 /* ---------------------------------------------------------
+   Slide 5: Mission Highlight & Credo Quote Card
+   --------------------------------------------------------- */
+.mission-quote-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(23, 29, 41, 0.75) 0%, rgba(13, 17, 26, 0.95) 100%);
+  border: 1.5px solid rgba(250, 204, 21, 0.45);
+  border-radius: 18px;
+  padding: 16px 24px;
+  margin: 10px 0 14px;
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.75),
+    0 0 28px rgba(234, 179, 8, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+.mission-quote-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #facc15 0%, #f59e0b 100%);
+  box-shadow: 0 0 14px #facc15;
+}
+
+.mission-quote-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #facc15;
+  background: rgba(250, 204, 21, 0.14);
+  border: 1px solid rgba(250, 204, 21, 0.35);
+  padding: 2px 10px;
+  border-radius: 9999px;
+  margin-bottom: 8px;
+}
+
+.mission-quote-lead {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(18px, 1.9vw, 24px);
+  line-height: 1.35;
+  color: #ffffff;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.mission-quote-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.mission-quote-author .author-name {
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.mission-quote-author .author-divider {
+  opacity: 0.4;
+  color: var(--text-muted);
+}
+
+.mission-quote-author .author-role {
+  color: #94a3b8;
+}
+
+.mission-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 4px;
+  margin-bottom: 14px;
+}
+
+.mission-pillar-card {
+  padding: 14px 16px;
+  border-radius: 14px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mission-pillar-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(250, 204, 21, 0.45);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.mission-stats-row {
+  display: flex;
+  gap: 40px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 14px;
+}
+
+.mission-stat-value {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.mission-stat-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Light mode overrides for Mission slide */
+[data-theme='light'] .mission-quote-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+  border: 1.5px solid rgba(202, 138, 4, 0.5);
+  box-shadow: 
+    0 16px 36px -6px rgba(202, 138, 4, 0.18),
+    0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='light'] .mission-quote-card::before {
+  background: linear-gradient(180deg, #ca8a04 0%, #b45309 100%);
+  box-shadow: 0 0 10px rgba(202, 138, 4, 0.4);
+}
+
+[data-theme='light'] .mission-quote-badge {
+  color: #b45309;
+  background: rgba(254, 240, 138, 0.65);
+  border: 1px solid rgba(202, 138, 4, 0.4);
+}
+
+[data-theme='light'] .mission-quote-lead {
+  color: #18181b;
+  text-shadow: none;
+}
+
+[data-theme='light'] .mission-quote-author .author-name {
+  color: #09090b;
+}
+
+[data-theme='light'] .mission-quote-author .author-role {
+  color: #475569;
+}
+
+[data-theme='light'] .mission-pillar-card:hover {
+  border-color: rgba(202, 138, 4, 0.6);
+  box-shadow: 0 12px 26px rgba(202, 138, 4, 0.15);
+}
+
+/* ---------------------------------------------------------
    Slide 1: Dedicated DomoDomo Logo Hero (Minimalist & Majestic)
    --------------------------------------------------------- */
 .hero-logo-only-container {

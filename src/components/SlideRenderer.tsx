@@ -1,6 +1,6 @@
 import React from 'react';
 import type { SlideData } from '../data/slidesData';
-import { ExternalLink, Sparkles, Terminal, Shield, Zap, Globe, Cpu, Layers, Eye, Glasses } from 'lucide-react';
+import { ExternalLink, Sparkles, Terminal, Shield, Zap, Globe, Cpu, Layers, Eye, Glasses, Heart } from 'lucide-react';
 import { TiltCard } from './TiltCard';
 import { UnoCardDeck } from './UnoCardDeck';
 import { AppIconStack } from './AppIconStack';
@@ -437,6 +437,72 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({
                   {slide.image.badge && <div className="frame-badge">{slide.image.badge}</div>}
                 </div>
               </TiltCard>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* -------------------------------------------------------------
+          LAYOUT: MISSION (Slide 5: Why We Built DomoDomo)
+          ------------------------------------------------------------- */}
+      {slide.layout === 'mission' && (
+        <div style={{ maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
+          <div className="anim anim-1 eyebrow" style={{ marginBottom: '4px' }}>
+            <span className="eyebrow-pill">
+              <Heart size={12} />
+              {slide.eyebrow}
+            </span>
+          </div>
+          <div className="anim anim-2 anim-rule" style={{ marginBottom: '6px' }} />
+          <h2 className="anim anim-3 headline-slide" style={{ marginBottom: '4px' }}>{slide.headline}</h2>
+          {slide.subheadline && (
+            <p className="anim anim-4 subheadline" style={{ marginBottom: '12px', fontSize: '14.5px', lineHeight: 1.45 }}>
+              {slide.subheadline}
+            </p>
+          )}
+
+          {slide.quote && (
+            <div className="anim anim-5 mission-quote-card">
+              <div className="mission-quote-badge">
+                <Sparkles size={11} />
+                <span>The Builder's Credo</span>
+              </div>
+              <blockquote className="mission-quote-lead">
+                {slide.quote}
+              </blockquote>
+              <div className="mission-quote-author">
+                <span className="author-name">Arron Parejas</span>
+                <span className="author-divider">•</span>
+                <span className="author-role">Founder of DomoDomo & Former GDGoC Lead</span>
+              </div>
+            </div>
+          )}
+
+          {slide.bullets && (
+            <div className="anim anim-6 mission-cards-grid">
+              {slide.bullets.map((b, i) => (
+                <div key={i} className="feature-card mission-pillar-card">
+                  {b.label && <div className="card-num">{b.label}</div>}
+                  <div className="card-desc" style={{ fontSize: '12.5px', color: 'var(--text-primary)', lineHeight: 1.55 }}>
+                    {b.text}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {slide.stats && (
+            <div className="anim anim-7 mission-stats-row">
+              {slide.stats.map((s, i) => (
+                <div key={i}>
+                  <div className="mission-stat-value">
+                    {s.value}
+                  </div>
+                  <div className="mission-stat-label">
+                    {s.label}
+                  </div>
+                </div>
+              ))}
             </div>
           )}
         </div>

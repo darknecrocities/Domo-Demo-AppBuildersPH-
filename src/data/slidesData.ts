@@ -21,6 +21,7 @@ export interface SlideData {
     | 'advanced-studio' 
     | 'significance' 
     | 'philosophy' 
+    | 'mission'
     | 'closing-connect';
   quote?: string;
   bullets?: Array<{ label?: string; text: string }>;
@@ -157,28 +158,39 @@ export const slides: SlideData[] = [
     ]
   },
 
-  // 05 — ARCHITECTURE: ZERO-SERVER SANDBOX
+  // 05 — MISSION: WHY WE BUILT DOMODOMO (STUDENT & COMMUNITY LEADER)
   {
     id: 5,
     tag: '05 / 14',
-    eyebrow: 'Architecture · Phase 1',
-    headline: '100% Client-Side Sandbox',
-    subheadline: 'Eliminating the server completely with modern WebAssembly and browser APIs.',
-    layout: 'evolution-utilities',
+    eyebrow: 'Why We Built DomoDomo · Core Mission',
+    headline: 'Why We Built DomoDomo',
+    subheadline: 'As a student builder and GDGoC community leader, I saw peers locked out of basic necessities by predatory paywalls.',
+    layout: 'mission',
+    quote: '"I believe that everyone deserves simple necessities tools, and not paid."',
     bullets: [
-      { label: 'Zero Cloud Uploads', text: 'Every conversion, merge, and edit executes in browser RAM. Zero telemetry.' },
-      { label: 'WASM Performance', text: 'Powered by FFmpeg.wasm, pdf-lib, Tesseract.js, and Web Audio APIs.' },
-      { label: 'Instant & Offline', text: 'No logins, no cookies, no rate limits. Fully operational without internet.' }
+      { 
+        label: 'The Student Reality', 
+        text: 'Students juggle technical coursework on a $2 budget. Being charged $20/month just to convert a PDF, format JSON, or compress an image is unreasonable and limits learning.' 
+      },
+      { 
+        label: 'Community Leadership', 
+        text: 'Leading GDGoC-HAU showed me hundreds of aspiring student devs facing the exact same roadblocks. When an entire community struggles with basic tools, leaders step up to build.' 
+      },
+      { 
+        label: 'Necessities Are Not Paywalls', 
+        text: 'DomoDomo was created as an open public good: 240+ client-side tools with zero logins, zero subscription fees, zero rate limits, and zero cloud tracking.' 
+      }
     ],
     stats: [
-      { value: '0 bytes', label: 'Data sent to servers' },
-      { value: '<50ms', label: 'Local execution' },
-      { value: '100%', label: 'Offline capability' }
+      { value: '$0', label: 'Forever free for students' },
+      { value: '0', label: 'Paywalls or daily limits' },
+      { value: '100%', label: 'Community-first & client-side' }
     ],
     notes: [
-      'Explain the architectural revolution: why move processing from cloud servers to the user’s device?',
-      'Detail WebAssembly: compiling C/C++ libraries like FFmpeg and Tesseract directly into the browser.',
-      'Highlight total privacy: confidential student and corporate documents never touch the wire.'
+      'Speak personally and passionately as a former GDGoC chapter lead and student ML engineer.',
+      'Deliver the core quote with conviction: "I believe that everyone deserves simple necessities tools, and not paid."',
+      'Explain that students and indie developers shouldn’t have to pay subscriptions just to convert a file or test a regex.',
+      'Frame DomoDomo as a community-first response to predatory SaaS paywalls.'
     ]
   },
 
